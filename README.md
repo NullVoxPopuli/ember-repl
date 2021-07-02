@@ -1,7 +1,8 @@
 ember-play
 ==============================================================================
 
-[Short description of the addon.]
+Tools for easily creating your own Ember Playground / REPL and/or Interactive
+StyleGuide for your design system.
 
 
 Compatibility
@@ -23,7 +24,16 @@ ember install ember-play
 Usage
 ------------------------------------------------------------------------------
 
-[Longer description of how to use the addon in apps.]
+This library currently uses a CommonJS technique for modules, but as browser-support
+permits, this library will eventually switch to using a web-worker with an import-map
+for lightning fast, eval-free REPLing.
+
+```js
+import { compile } from 'ember-play';
+
+compile({ code: 'gjs code', name: 'component-name' });
+
+```
 
 
 Contributing
