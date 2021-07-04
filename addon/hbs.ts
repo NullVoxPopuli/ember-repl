@@ -12,7 +12,7 @@ import { nameFor } from './utils';
  */
 export function compileHBS(template: string) {
   let name = nameFor(template);
-  let factory: undefined | TemplateFactory;
+  let factory: undefined | any;
   let error: undefined | Error;
 
   try {
@@ -27,7 +27,7 @@ export function compileHBS(template: string) {
   return { name, factory, error };
 }
 
-function toComponent(template: unknown, name: string): TemplateFactory {
+function toComponent(template: TemplateFactory, name: string) {
   // https://github.com/glimmerjs/glimmer-vm/blob/master/packages/%40glimmer/runtime/lib/component/template-only.ts#L83
   return setComponentTemplate(template, templateOnlyComponent(name));
 }

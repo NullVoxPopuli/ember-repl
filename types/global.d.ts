@@ -1,9 +1,9 @@
 // Types for compiled templates
-declare module 'ember-play/templates/*' {
-  import type { TemplateFactory } from 'htmlbars-inline-precompile';
-  const tmpl: TemplateFactory;
-  export default tmpl;
-}
+// declare module 'ember-play/templates/*' {
+//   import type { TemplateFactory } from 'htmlbars-inline-precompile';
+//   const tmpl: TemplateFactory;
+//   export default tmpl;
+// }
 
 // provided by vendor/ember/ember-template-compiler.js (somehow)
 declare module 'ember-template-compiler';

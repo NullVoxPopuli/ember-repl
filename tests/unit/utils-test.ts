@@ -1,7 +1,8 @@
-import { module, test } from 'qunit';
-import { setupOnerror, resetOnerror } from '@ember/test-helpers';
+import {module, test} from 'qunit';
+import {setupTest} from 'ember-qunit';
+import {setupOnerror, resetOnerror} from '@ember/test-helpers';
 
-import { nameFor, invocationOf } from 'ember-play';
+import {nameFor, invocationOf} from 'ember-play';
 
 module('nameFor()', function () {
   function randomInRange(min: number, max: number) {
@@ -33,20 +34,13 @@ module('nameFor()', function () {
   });
 });
 
-module('invocationOf()', function () {
+module('invocationOf()', function (hooks) {
+  setupTest(hooks);
+
   test('it works', function (assert) {
-    assert.expect(8);
+    assert.expect(7);
 
-    setupOnerror((e: Error) => {
-      assert.equal(
-        e.message,
-        'You mest pass a name to invocationOf. Received: ``'
-      );
-    });
-
-    assert.equal(invocationOf(''), '< />');
-
-    resetOnerror();
+    assert.throws(() => invocationOf(''), /You must pass a name to invocationOf. Received: ``/);
     assert.equal(invocationOf('a'), '<A />');
     assert.equal(invocationOf('a-1'), '<A1 />');
     assert.equal(invocationOf('ab-1'), '<Ab1 />');
