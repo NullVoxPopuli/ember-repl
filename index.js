@@ -5,7 +5,7 @@ module.exports = {
 
   options: {
     'ember-cli-babel': {
-      enableTypeScriptTransform: true
+      enableTypeScriptTransform: true,
     },
   },
 
