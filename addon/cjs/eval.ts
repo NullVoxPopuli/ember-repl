@@ -9,6 +9,7 @@ import * as _application from '@ember/application';
 import * as _array from '@ember/array';
 import * as _EmberComponent from '@ember/component';
 import _TO from '@ember/component/template-only';
+import * as _debug from '@ember/debug';
 import * as _destroyable from '@ember/destroyable';
 import * as _helpers from '@ember/helper';
 import * as _modifier from '@ember/modifier';
@@ -17,6 +18,7 @@ import * as _runloop from '@ember/runloop';
 import * as _service from '@ember/service';
 import * as _string from '@ember/string';
 import { createTemplateFactory } from '@ember/template-factory';
+import * as _utils from '@ember/utils';
 
 import type Component from '@glimmer/component';
 
@@ -25,6 +27,7 @@ const modules = {
   '@ember/array': _array,
   '@ember/component': _EmberComponent,
   '@ember/component/template-only': _TO,
+  '@ember/debug': _debug,
   '@ember/destroyable': _destroyable,
   '@ember/helper': _helpers,
   '@ember/modifier': _modifier,
@@ -33,6 +36,7 @@ const modules = {
   '@ember/service': _service,
   '@ember/string': _string,
   '@ember/template-factory': { createTemplateFactory },
+  '@ember/utils': _utils,
 
   '@glimmer/component': _GlimmerComponent,
   '@glimmer/tracking': _tracking,

@@ -1,4 +1,3 @@
-import { resetOnerror, setupOnerror } from '@ember/test-helpers';
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
 

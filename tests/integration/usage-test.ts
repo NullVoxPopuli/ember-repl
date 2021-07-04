@@ -5,6 +5,8 @@ import { setupRenderingTest } from 'ember-qunit';
 
 import { compileHBS, compileJS } from 'ember-play';
 
+import { Await } from '../helpers/await';
+
 module('Usage', function (hooks) {
   setupRenderingTest(hooks);
 
@@ -19,12 +21,12 @@ module('Usage', function (hooks) {
           {{/each}}
         `;
 
-        let { factory, name, error } = compileHBS(template);
+        let { component, name, error } = compileHBS(template);
 
         assert.notOk(error);
         assert.ok(name);
 
-        return factory;
+        return component;
       },
     });
 
@@ -45,7 +47,8 @@ module('Usage', function (hooks) {
     assert.expect(6);
 
     this.setProperties({
-      compile: () => {
+      await: Await,
+      compile: async () => {
         let template = `
           import Component from '@glimmer/component';
           import { tracked } from '@glimmer/tracking';
@@ -54,7 +57,7 @@ module('Usage', function (hooks) {
           export default class MyComponent extends Component {
             @tracked value = 0;
 
-            increment = () => value++;
+            increment = () => this.value++;
 
             <template>
               <output>{{this.value}}</output>
@@ -63,19 +66,19 @@ module('Usage', function (hooks) {
           }
         `;
 
-        let { factory, name, error } = compileJS(template);
+        let { component, name, error } = await compileJS(template);
 
         assert.notOk(error);
         assert.ok(name);
 
-        return factory;
+        return component;
       },
     });
 
     await render(
       hbs`
         {{#let (this.compile) as |CustomComponent|}}
-          <CustomComponent />
+          <this.await @promise={{CustomComponent}} />
         {{/let}}
       `
     );

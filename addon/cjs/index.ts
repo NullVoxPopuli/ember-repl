@@ -4,6 +4,7 @@ import * as Babel from '@babel/standalone';
 import HTMLBars, { preprocessEmbeddedTemplates } from 'babel-plugin-htmlbars-inline-precompile';
 import { precompile as precompileTemplate } from 'ember-template-compiler';
 
+import { nameFor } from '../utils';
 import { evalSnippet } from './eval';
 
 export interface Info {
@@ -11,28 +12,20 @@ export interface Info {
   name: string;
 }
 
-export function compileJS() {}
+export async function compileJS(code: string) {
+  let name = nameFor(code);
+  let component: undefined | unknown;
+  let error: undefined | Error;
 
-/**
- * TODO:
- *  - pull in the name generator / hasher
- *  - return the generated name
- *  - add instructions for how to invoke
- *  - add instructions for how to use your own components
- *
- */
-export async function compile(js: Info[]) {
-  let rawCode = await Promise.all(
-    js.map(async ({ name, code }) => {
-      let compiled = await compileGJS({ code, name });
+  try {
+    let compiled = await compileGJS({ code: code, name });
 
-      return { name, code: compiled } as Info;
-    })
-  );
+    component = evalSnippet(compiled).default;
+  } catch (e) {
+    error = e;
+  }
 
-  let modules = rawCode.map((info) => ({ name: info.name, ...evalSnippet(info.code) }));
-
-  return modules;
+  return { name, component, error };
 }
 
 async function compileGJS({ code: input, name }: Info) {

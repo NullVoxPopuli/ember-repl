@@ -12,13 +12,14 @@ import { nameFor } from './utils';
  */
 export function compileHBS(template: string) {
   let name = nameFor(template);
-  let component: undefined | any;
+  let component: undefined | unknown;
   let error: undefined | Error;
 
   try {
-    component = templateOnlyComponent(name);
-
-    setComponentTemplate(compileTemplate(template, { moduleName: name }), component);
+    component = setComponentTemplate(
+      compileTemplate(template, { moduleName: name }),
+      templateOnlyComponent(name)
+    );
   } catch (e) {
     error = e;
   }
