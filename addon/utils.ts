@@ -1,4 +1,5 @@
 import { camelize, capitalize } from '@ember/string';
+import { assert } from '@ember/debug';
 import { v5 as uuidv5 } from 'uuid';
 
 /**
@@ -27,5 +28,14 @@ export function nameFor(code: string, prefix = DEFAULT_PREFIX) {
  * case in REPLs / Playgrounds for the "root" component.
  */
 export function invocationOf(name: string) {
+  assert(
+    `You must pass a name to invocationOf. Received: \`${name}\``,
+    typeof name === 'string' && name.length > 0
+  );
+
+  if (name.length === 0) {
+    throw new Error(`name passed to invocationOf must have non-0 length`);
+  }
+
   return `<${capitalize(camelize(name))} />`;
 }

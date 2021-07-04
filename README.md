@@ -16,6 +16,8 @@ Compatibility
 
 * Ember.js v3.27 or above
 * Ember CLI v3.27 or above
+* Webpack v5 or above
+* ember-auto-import v2 or above
 * Node.js v12 or above
 
 

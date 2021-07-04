@@ -15,10 +15,6 @@ export function compileJS() {
 
 }
 
-export function compileHBS() {
-
-}
-
 /**
   * TODO:
   *  - pull in the name generator / hasher

@@ -7,6 +7,20 @@ module.exports = {
     'ember-cli-babel': {
       enableTypeScriptTransform: true,
     },
+    autoImport: {
+      webpack: {
+        node: {
+          global: false,
+          __filename: true,
+          __dirname: true,
+        },
+        resolve: {
+          fallback: {
+            path: 'path-browserify',
+          },
+        },
+      },
+    },
   },
 
   included(app) {
