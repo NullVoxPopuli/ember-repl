@@ -24,8 +24,8 @@
     "test": "npm-run-all lint test:*",
     "test:ember": "ember test",
     "test:ember-compatibility": "ember try:each",
-    "prepack": "ember ts:precompile",
-    "postpack": "ember ts:clean"
+    "prepack": "yarn add ember-cli-typescript && ember ts:precompile",
+    "postpack": "yarn add ember-cli-typescript && ember ts:clean"
   },
   "dependencies": {
     "@babel/standalone": "^7.14.6",
