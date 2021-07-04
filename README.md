@@ -39,7 +39,7 @@ export class Renderer extends Component {
   constructor(...args) {
     super(...args);
 
-    compileJS('...').then(Component => this.myComponent = Component);
+    compileJS('...').then(({ component }) => this.myComponent = component);
   }
 }
 ```
@@ -50,11 +50,90 @@ export class Renderer extends Component {
 ```
 
 
+### Expecting Errors
+
+`compileJS` and `compileHBS` may result an an error.
+
+To handle this, you'll want to make sure that rendering the `component` output is
+guarded by either:
+ - the truthiness of `component` (which is undefined if `error` is present)
+ - the falsiness of `error` (which is undefined if compilation was successful)
+
+
+Depending on your desired UI/UX, how the async build of updates to input is conveyed
+may vary and is not provided by this library.
+Here is an example of a way that someone could handle rendering with `compileJS`:
+
+```js
+export default class AwaitBuild extends Component {
+  @tracked component;
+  @tracked error;
+
+  constructor(...args) {
+    super(...args);
+
+    compileJS(args.inputText)
+      .then(({ component, error }) => {
+        this.component = component;
+        this.error = error;
+      })
+      .catch(error => this.error = error);
+  }
+
+  get isPending() {
+    return !this.component';
+  }
+}
+```
+```hbs
+{{#if this.error}}
+  Error: {{this.error}}
+{{else if this.isPending}}
+  Building...
+{{else}}
+  <this.component />
+{{/if}}
+```
+
+
 **A Note on Capabilities**
 This library currently uses a CommonJS technique for modules, but as browser-support
 permits, this library will eventually switch to using a web-worker with an import-map
 for lightning fast, `eval`-free REPLing. (But the same security caution below would
 still apply)
+
+### API
+
+- `compileJS`: async `{ component, error, name }` - compiles a single JS file
+   uses the syntax from [ember-template-imports](https://github.com/ember-template-imports/ember-template-imports)
+- `compileHBS`: `{ component, error, name }` - compiles a template-only component with no dependencies
+- `invocationOf`: `string` - converts hyphenated text to an `<AngleBracketInvocation />`
+- `nameFor`: `string` - generates a component-safe GUID-like derivation from code
+
+_`component`_: invokable from templates
+_`error`_: if there is a compilation error, this will be non-falsey
+_`name`_: the name assigned to the input text via UUIDv5
+
+### Using in an app that uses Embroider
+
+If you are using the `Webpack` packager, you will need these settings:
+
+```js
+packagerOptions: {
+  webpackConfig: {
+    node: {
+      global: false,
+      __filename: true,
+      __dirname: true,
+    },
+    resolve: {
+      fallback: {
+        path: 'path-browserify',
+      },
+    },
+  },
+},
+```
 
 ## Security
 
