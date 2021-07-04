@@ -4,7 +4,9 @@ const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function (defaults) {
   let app = new EmberAddon(defaults, {
-    // Add options here
+    'ember-cli-babel': {
+      enableTypeScriptTransform: true,
+    },
   });
 
   /*
@@ -15,5 +17,21 @@ module.exports = function (defaults) {
   */
 
   const { maybeEmbroider } = require('@embroider/test-setup');
-  return maybeEmbroider(app);
+
+  return maybeEmbroider(app, {
+    packagerOptions: {
+      webpackConfig: {
+        node: {
+          global: false,
+          __filename: true,
+          __dirname: true,
+        },
+        resolve: {
+          fallback: {
+            path: 'path-browserify',
+          },
+        },
+      },
+    },
+  });
 };
