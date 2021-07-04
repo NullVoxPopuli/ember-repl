@@ -25,6 +25,7 @@ export class Await extends Component<Args> {
         if (isDestroying(this) || isDestroyed(this)) return;
 
         this.error = error;
+        this.resolved = undefined;
       });
   }
 
