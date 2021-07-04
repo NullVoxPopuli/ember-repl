@@ -4,13 +4,19 @@ ember-play
 Tools for easily creating your own Ember Playground / REPL and/or Interactive
 StyleGuide for your design system.
 
+_This package will include all available dev-time dependencies provided by
+ember + glimmer as well as `@babel/standalone`._
+Your payload will be affected and Embroider is recommended
+with maximum strictness enabled so automatic bundle splitting occurs to help
+your app's initial time-to-interactive/etc stats.
+
 
 Compatibility
 ------------------------------------------------------------------------------
 
-* Ember.js v3.16 or above
-* Ember CLI v2.13 or above
-* Node.js v10 or above
+* Ember.js v3.27 or above
+* Ember CLI v3.27 or above
+* Node.js v12 or above
 
 
 Installation

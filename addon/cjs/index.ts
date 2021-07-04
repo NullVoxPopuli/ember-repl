@@ -4,11 +4,19 @@ import * as Babel from '@babel/standalone';
 import HTMLBars, { preprocessEmbeddedTemplates } from 'babel-plugin-htmlbars-inline-precompile';
 import { precompile as precompileTemplate } from 'ember-template-compiler';
 
-import { evalSnippet } from './cjs-eval';
+import { evalSnippet } from './eval';
 
 export interface Info {
   code: string;
   name: string;
+}
+
+export function compileJS() {
+
+}
+
+export function compileHBS() {
+
 }
 
 /**
