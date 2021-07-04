@@ -45,9 +45,10 @@ function require(moduleName: keyof typeof modules): unknown {
   return modules[moduleName];
 }
 
-export function evalSnippet(
-  compiled: string
-): { default: Component; services?: { [key: string]: unknown } } {
+export function evalSnippet(compiled: string): {
+  default: Component;
+  services?: { [key: string]: unknown };
+} {
   const exports = {};
 
   eval(compiled);

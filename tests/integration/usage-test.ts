@@ -1,9 +1,9 @@
+import { click, render } from '@ember/test-helpers';
+import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { hbs } from 'ember-cli-htmlbars';
-import { render } from '@ember/test-helpers';
 
-import { compileJS, compileHBS } from 'ember-play';
+import { compileHBS, compileJS } from 'ember-play';
 
 module('Usage', function (hooks) {
   setupRenderingTest(hooks);
@@ -42,7 +42,7 @@ module('Usage', function (hooks) {
   });
 
   test('with JS', async function (assert) {
-    assert.expect(5);
+    assert.expect(6);
 
     this.setProperties({
       compile: () => {
@@ -80,8 +80,13 @@ module('Usage', function (hooks) {
       `
     );
 
-    assert.dom('output').exists({ count: 2 });
-    assert.dom().containsText('1');
-    assert.dom().containsText('2');
+    assert.dom('output').exists();
+    assert.dom('output').hasText('0');
+
+    await click('button');
+    assert.dom('output').hasText('1');
+
+    await click('button');
+    assert.dom('output').hasText('2');
   });
 });

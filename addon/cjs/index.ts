@@ -11,18 +11,16 @@ export interface Info {
   name: string;
 }
 
-export function compileJS() {
-
-}
+export function compileJS() {}
 
 /**
-  * TODO:
-  *  - pull in the name generator / hasher
-  *  - return the generated name
-  *  - add instructions for how to invoke
-    *  - add instructions for how to use your own components
-  *
-  */
+ * TODO:
+ *  - pull in the name generator / hasher
+ *  - return the generated name
+ *  - add instructions for how to invoke
+ *  - add instructions for how to use your own components
+ *
+ */
 export async function compile(js: Info[]) {
   let rawCode = await Promise.all(
     js.map(async ({ name, code }) => {

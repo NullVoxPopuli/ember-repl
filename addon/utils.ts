@@ -1,5 +1,6 @@
-import { camelize, capitalize } from '@ember/string';
 import { assert } from '@ember/debug';
+import { camelize, capitalize } from '@ember/string';
+
 import { v5 as uuidv5 } from 'uuid';
 
 /**

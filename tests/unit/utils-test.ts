@@ -1,19 +1,19 @@
-import {module, test} from 'qunit';
-import {setupTest} from 'ember-qunit';
-import {setupOnerror, resetOnerror} from '@ember/test-helpers';
+import { resetOnerror, setupOnerror } from '@ember/test-helpers';
+import { module, test } from 'qunit';
+import { setupTest } from 'ember-qunit';
 
-import {nameFor, invocationOf} from 'ember-play';
+import { invocationOf, nameFor } from 'ember-play';
 
 module('nameFor()', function () {
   function randomInRange(min: number, max: number) {
     return Math.random() * (max - min) + min;
   }
+
   function makeString() {
     let length = randomInRange(0, 10000);
 
     let result = '';
-    let characters =
-      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let charactersLength = characters.length;
 
     for (let i = 0; i < length; i++) {

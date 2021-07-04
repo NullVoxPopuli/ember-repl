@@ -1,6 +1,6 @@
-import { compileTemplate as _compile } from '@ember/template-compilation';
-import { setComponentTemplate, TemplateFactory } from '@ember/component';
+import { setComponentTemplate } from '@ember/component';
 import templateOnlyComponent from '@ember/component/template-only';
+import { compileTemplate as _compile } from '@ember/template-compilation';
 
 import { nameFor } from './utils';
 
@@ -12,24 +12,18 @@ import { nameFor } from './utils';
  */
 export function compileHBS(template: string) {
   let name = nameFor(template);
-  let factory: undefined | any;
+  let component: undefined | any;
   let error: undefined | Error;
 
   try {
-    factory = toComponent(
-      compileTemplate(template, { moduleName: name }),
-      name
-    );
+    component = templateOnlyComponent(name);
+
+    setComponentTemplate(compileTemplate(template, { moduleName: name }), component);
   } catch (e) {
     error = e;
   }
 
-  return { name, factory, error };
-}
-
-function toComponent(template: TemplateFactory, name: string) {
-  // https://github.com/glimmerjs/glimmer-vm/blob/master/packages/%40glimmer/runtime/lib/component/template-only.ts#L83
-  return setComponentTemplate(template, templateOnlyComponent(name));
+  return { name, component, error };
 }
 
 /**
