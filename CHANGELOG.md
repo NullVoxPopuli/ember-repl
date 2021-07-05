@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/NullVoxPopuli/ember-repl/compare/v1.0.3...v1.1.0) (2021-07-05)
+
+
+### Features
+
+* **npm:** rename to ember-repl as ember-play is taken ([46235a4](https://github.com/NullVoxPopuli/ember-repl/commit/46235a418b9adc57ff99f02d14f68e8553385bb5))
+
 ## [1.0.3](https://github.com/NullVoxPopuli/ember-repl/compare/v1.0.2...v1.0.3) (2021-07-05)
 
 
