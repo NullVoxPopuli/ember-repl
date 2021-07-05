@@ -25,8 +25,9 @@ your app's initial time-to-interactive/etc stats.
 ember install ember-repl
 ```
 
-
 ## Usage
+
+**`compileJS`**
 
 ```js
 import Component from '@glimmer/component';
@@ -49,6 +50,41 @@ export class Renderer extends Component {
 {{/if}}
 ```
 
+**`compileHBS`**
+
+```js
+import Component from '@glimmer/component';
+import { compileHBS } from 'ember-repl';
+
+export class Renderer extends Component {
+  myComponent = compileHBS(this.args.input);
+}
+```
+```hbs
+<this.myComponent />
+```
+
+### Modifiers and Helpers
+
+When writing components / demos / examples using this library, you must use
+template-strict mode. Strict mode isn't available by default in proper ember
+apps yet. The main difference in strict mode is that all globals must be imported.
+
+Example of a template-only component that only provides a button:
+
+<!-- If you're reading the source for this README, JSX is incorrect, but we
+haven't yet PR'd to github for support for this style of writing ember -->
+```jsx
+import { on } from '@ember/modifier';
+import { fn, hash } from '@ember/helper';
+
+<template>
+  <button {{on 'click' (fn @callback (hash a=1 b=2))}}>...</button>
+</template>
+```
+
+For a list of all the imports for things that are global in loose mode, view
+the [Strict Mode RFC](https://github.com/emberjs/rfcs/blob/master/text/0496-handlebars-strict-mode.md#keywords)
 
 ### Expecting Errors
 
