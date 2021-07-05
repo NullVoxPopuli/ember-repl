@@ -28,16 +28,16 @@
         "tests/dummy/app/*",
         "app/*"
       ],
-      "ember-play": [
+      "ember-repl": [
         "addon"
       ],
-      "ember-play/*": [
+      "ember-repl/*": [
         "addon/*"
       ],
-      "ember-play/test-support": [
+      "ember-repl/test-support": [
         "addon-test-support"
       ],
-      "ember-play/test-support/*": [
+      "ember-repl/test-support/*": [
         "addon-test-support/*"
       ],
       "*": [

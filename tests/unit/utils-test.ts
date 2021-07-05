@@ -1,7 +1,7 @@
 import { module, test } from 'qunit';
 import { setupTest } from 'ember-qunit';
 
-import { invocationOf, nameFor } from 'ember-play';
+import { invocationOf, nameFor } from 'ember-repl';
 
 module('nameFor()', function () {
   function randomInRange(min: number, max: number) {

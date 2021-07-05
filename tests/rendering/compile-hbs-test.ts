@@ -3,7 +3,7 @@ import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
-import { compileHBS } from 'ember-play';
+import { compileHBS } from 'ember-repl';
 
 import { Await } from '../helpers/await';
 
