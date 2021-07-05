@@ -20,6 +20,10 @@ export async function compileJS(code: string) {
   try {
     let compiled = await compileGJS({ code: code, name });
 
+    if (!compiled) {
+      throw new Error(`Compiled output is missing`);
+    }
+
     component = evalSnippet(compiled).default;
   } catch (e) {
     error = e;
