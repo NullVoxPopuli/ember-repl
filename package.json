@@ -33,7 +33,6 @@
     "ember-auto-import": "^2.0.2",
     "ember-cli-babel": "^7.26.6",
     "ember-cli-htmlbars": "^5.7.1",
-    "ember-cli-typescript": "*",
     "ember-compatibility-helpers": "^1.2.4",
     "path-browserify": "^1.0.1",
     "uuid": "8.3.2"
@@ -109,7 +108,10 @@
     "qunit-dom": "^1.6.0",
     "semantic-release": "^17.4.4",
     "typescript": "^4.3.5",
-    "webpack": "^5.43.0"
+    "webpack": "^5.43.0",
+    "@embroider/core": "0.42.3",
+    "@embroider/webpack": "0.42.3",
+    "@embroider/compat": "0.42.3"
   },
   "release": {
     "branches": [
@@ -136,9 +138,6 @@
     "edition": "octane"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config",
-    "paths": [
-      "lib/ember-cli-typescript"
-    ]
+    "configPath": "tests/dummy/config"
   }
 }
