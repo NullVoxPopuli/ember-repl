@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/NullVoxPopuli/ember-play/compare/v1.0.2...v1.0.3) (2021-07-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @babel/standalone to ^7.14.7 ([44e3dff](https://github.com/NullVoxPopuli/ember-play/commit/44e3dff3d20aa7515ae4932013b6aadf91164df9))
+
 ## [1.0.2](https://github.com/NullVoxPopuli/ember-play/compare/v1.0.1...v1.0.2) (2021-07-05)
 
 
