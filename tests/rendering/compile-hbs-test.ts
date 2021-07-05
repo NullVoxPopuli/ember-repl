@@ -1,3 +1,5 @@
+import { setComponentTemplate } from '@ember/component';
+import templateOnly from '@ember/component/template-only';
 import { render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
@@ -41,6 +43,34 @@ module('compileHBS()', function (hooks) {
     assert.dom('output').exists({ count: 2 });
     assert.dom().containsText('1');
     assert.dom().containsText('2');
+  });
+
+  test('can render components passed to scope', async function (assert) {
+    assert.expect(3);
+
+    const SomeOtherComponent = setComponentTemplate(hbs`there!`, templateOnly());
+
+    let template = `Hi <SomeOtherComponent />`;
+
+    this.setProperties({
+      compile: () => {
+        let { component, error, name } = compileHBS(template, { scope: { SomeOtherComponent } });
+
+        assert.notOk(error);
+        assert.ok(name);
+
+        return component;
+      },
+    });
+
+    await render(hbs`
+      {{#let (this.compile) as |CustomComponent|}}
+      {{log CustomComponent}}
+        <CustomComponent />
+      {{/let}}
+    `);
+
+    assert.dom().containsText('Hi there!');
   });
 
   module('deliberate errors', function () {

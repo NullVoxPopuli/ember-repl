@@ -8,6 +8,7 @@
 // provided by vendor/ember/ember-template-compiler.js (somehow)
 declare module 'ember-template-compiler';
 
+declare module '@ember/-internals/glimmer';
 declare module '@ember/helper';
 declare module '@ember/modifier';
 declare module '@ember/template-factory';
@@ -20,12 +21,13 @@ declare module '@ember/template-compilation' {
   export interface CompileOptions {
     moduleName: string;
     strictMode: boolean;
-    locals: Array<unknown>;
-    isProduction: boolean;
-    meta: Record<string, unknown>;
-    plugins: {
-      ast: Array<unknown>
-    }
+    locals?: Array<unknown>;
+    scope: Record<string, unknown> | (() => Record<string, unknown>);
+    isProduction?: boolean;
+    // meta: Record<string, unknown>;
+    // plugins: {
+    //   ast: Array<unknown>
+    // }
   }
   export function compileTemplate(template: string, options: CompileOptions): any;
 }
