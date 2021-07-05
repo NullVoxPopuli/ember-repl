@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/NullVoxPopuli/ember-play/compare/v1.0.1...v1.0.2) (2021-07-05)
+
+
+### Bug Fixes
+
+* **ts:** add deps until TS is happy ([24ebf32](https://github.com/NullVoxPopuli/ember-play/commit/24ebf3233253c1020a67072e1ef98526137579f0))
+
 ## [1.0.1](https://github.com/NullVoxPopuli/ember-play/compare/v1.0.0...v1.0.1) (2021-07-04)
 
 
