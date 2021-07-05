@@ -1,4 +1,4 @@
-# ember-play
+# ember-repl
 
 Tools for easily creating your own Ember Playground / REPL and/or Interactive
 StyleGuide for your design system.
@@ -22,7 +22,7 @@ your app's initial time-to-interactive/etc stats.
 ## Installation
 
 ```
-ember install ember-play
+ember install ember-repl
 ```
 
 
@@ -31,7 +31,7 @@ ember install ember-play
 ```js
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
-import { compileJS } from 'ember-play';
+import { compileJS } from 'ember-repl';
 
 export class Renderer extends Component {
   @tracked myComponent;

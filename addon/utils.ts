@@ -9,7 +9,7 @@ import { v5 as uuidv5 } from 'uuid';
  * it helps generate stable outputs for for any given input.
  */
 const NAMESPACE = '926f034a-f480-4112-a363-321244f4e5de';
-const DEFAULT_PREFIX = 'ember-play';
+const DEFAULT_PREFIX = 'ember-repl';
 
 /**
  * For any given code block, a reasonably stable name can be

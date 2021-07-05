@@ -3,7 +3,7 @@
 ## Installation
 
 * `git clone <repository-url>`
-* `cd ember-play`
+* `cd ember-repl`
 * `yarn install`
 
 ## Linting
