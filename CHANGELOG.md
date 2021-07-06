@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/NullVoxPopuli/ember-repl/compare/v1.3.0...v1.3.1) (2021-07-06)
+
+
+### Bug Fixes
+
+* **types:** public types had mismatch with published types ([7ce4204](https://github.com/NullVoxPopuli/ember-repl/commit/7ce4204a4f6fd1ff8e11aeab41c7f27130e7be6e))
+
 # [1.3.0](https://github.com/NullVoxPopuli/ember-repl/compare/v1.2.0...v1.3.0) (2021-07-06)
 
 
