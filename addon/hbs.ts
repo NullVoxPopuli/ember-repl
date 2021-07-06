@@ -1,12 +1,14 @@
-// import { template } from '@ember/-internals/glimmer';
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { getTemplateLocals } from '@glimmer/syntax';
 import { setComponentTemplate } from '@ember/component';
 import templateOnlyComponent from '@ember/component/template-only';
 import { array, concat, fn, get, hash } from '@ember/helper';
 import { on } from '@ember/modifier';
-import { compileTemplate as _compileTemplate } from '@ember/template-compilation';
+// import { compileTemplate as _compileTemplate } from '@ember/template-compilation';
+import { createTemplateFactory } from '@ember/template-factory';
 
-// import { precompile as precompileTemplate } from 'ember-template-compiler';
+import { precompile as precompileTemplate } from 'ember-template-compiler';
+
 import { nameFor } from './utils';
 
 /**
@@ -48,26 +50,30 @@ interface CompileTemplateOptions {
  * thing that library-authors mess with.
  */
 function compileTemplate(text: string, { moduleName, scope = {} }: CompileTemplateOptions) {
-  let localScope = { array, concat, fn, get, hash, on, ...scope };
-  let locals = getTemplateLocals(text) as unknown[];
+  let localScope = { array, concat, fn, get, hash, on, ...scope } as any;
+  let locals = getTemplateLocals(text);
 
-  console.log({ locals });
   // https://github.com/emberjs/rfcs/pull/731/files
-  // let compiled = precompileTemplate(text, {
-  let compiled = _compileTemplate(text, {
+  let compiled = precompileTemplate(text, {
     strictMode: true,
     moduleName,
     scope: () => localScope,
     locals,
     isProduction: false,
+    meta: {
+      moduleName,
+    },
   });
 
-  // let result = template(evaluate(compiled));
+  let block: any;
 
-  // return result;
-  return compiled;
+  // Yikes! :(
+  eval(`block = ${compiled}`);
+
+  // precompileTemplate and compileTemplate lose the reference to our local
+  // scope...
+  block.scope = () => locals.map((key) => localScope[key]);
+  let factory = createTemplateFactory(block);
+
+  return factory;
 }
-
-// function evaluate(precompiled: string) {
-//   return new Function('return ' + precompiled);
-// }

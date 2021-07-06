@@ -65,7 +65,6 @@ module('compileHBS()', function (hooks) {
 
     await render(hbs`
       {{#let (this.compile) as |CustomComponent|}}
-      {{log CustomComponent}}
         <CustomComponent />
       {{/let}}
     `);

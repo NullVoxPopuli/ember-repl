@@ -24,7 +24,7 @@ declare module '@ember/template-compilation' {
     locals?: Array<unknown>;
     scope: Record<string, unknown> | (() => Record<string, unknown>);
     isProduction?: boolean;
-    // meta: Record<string, unknown>;
+    meta?: Record<string, unknown>;
     // plugins: {
     //   ast: Array<unknown>
     // }
