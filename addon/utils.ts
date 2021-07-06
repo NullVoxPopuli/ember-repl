@@ -38,5 +38,9 @@ export function invocationOf(name: string) {
     throw new Error(`name passed to invocationOf must have non-0 length`);
   }
 
-  return `<${capitalize(camelize(name))} />`;
+  return `<${invocationName(name)} />`;
+}
+
+export function invocationName(name: string) {
+  return capitalize(camelize(name));
 }
