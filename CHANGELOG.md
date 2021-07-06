@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/NullVoxPopuli/ember-repl/compare/v1.2.0...v1.3.0) (2021-07-06)
+
+
+### Features
+
+* **hbs:** switch away from eval in favor of @glimmer/compiler direct ([7900e73](https://github.com/NullVoxPopuli/ember-repl/commit/7900e7301e3cbe82dc6a58f534979b3c98ac2c4c))
+* **types:** add CompileResult type to public API ([6e6dcef](https://github.com/NullVoxPopuli/ember-repl/commit/6e6dcef79fbc2749af6be0a685cdfc5c0a08efb6))
+
 # [1.2.0](https://github.com/NullVoxPopuli/ember-repl/compare/v1.1.0...v1.2.0) (2021-07-06)
 
 
