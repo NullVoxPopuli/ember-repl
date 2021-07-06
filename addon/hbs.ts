@@ -1,13 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { precompileJSON } from '@glimmer/compiler';
 import { getTemplateLocals } from '@glimmer/syntax';
 import { setComponentTemplate } from '@ember/component';
 import templateOnlyComponent from '@ember/component/template-only';
 import { array, concat, fn, get, hash } from '@ember/helper';
 import { on } from '@ember/modifier';
-// import { compileTemplate as _compileTemplate } from '@ember/template-compilation';
 import { createTemplateFactory } from '@ember/template-factory';
-
-import { precompile as precompileTemplate } from 'ember-template-compiler';
 
 import { nameFor } from './utils';
 
@@ -43,37 +41,38 @@ interface CompileTemplateOptions {
 }
 
 /**
- * Same API as in ember -- but with defaults for easier consumption.
+ * The reason why we can't use precompile directly is because of this:
+ * https://github.com/glimmerjs/glimmer-vm/blob/master/packages/%40glimmer/compiler/lib/compiler.ts#L132
  *
- * Maybe at some point in the future the api could be expanded to allow
- * locals to be passed, but for the most part, it seems easier as a low-level
- * thing that library-authors mess with.
+ * Support for dynamically compiling templates in strict mode doesn't seem to be fully their yet.
+ * That JSON.stringify (and the lines after) prevent us from easily setting the scope function,
+ * which means that *everything* is undefined.
  */
-function compileTemplate(text: string, { moduleName, scope = {} }: CompileTemplateOptions) {
+function compileTemplate(source: string, { moduleName, scope = {} }: CompileTemplateOptions) {
   let localScope = { array, concat, fn, get, hash, on, ...scope } as any;
-  let locals = getTemplateLocals(text);
+  let locals = getTemplateLocals(source);
 
-  // https://github.com/emberjs/rfcs/pull/731/files
-  let compiled = precompileTemplate(text, {
+  let options = {
     strictMode: true,
     moduleName,
-    scope: () => localScope,
     locals,
     isProduction: false,
-    meta: {
-      moduleName,
-    },
-  });
+    meta: { moduleName },
+  };
 
-  let block: any;
+  // Copied from @glimmer/compiler/lib/compiler#precompile
+  let [block /*, usedLocals */] = precompileJSON(source, options);
 
-  // Yikes! :(
-  eval(`block = ${compiled}`);
+  let blockJSON = JSON.stringify(block);
+  let templateJSONObject = {
+    id: moduleName,
+    block: blockJSON,
+    moduleName: moduleName ?? '(unknown template module)',
+    scope: () => locals.map((key) => localScope[key]),
+    isStrictMode: true,
+  };
 
-  // precompileTemplate and compileTemplate lose the reference to our local
-  // scope...
-  block.scope = () => locals.map((key) => localScope[key]);
-  let factory = createTemplateFactory(block);
+  let factory = createTemplateFactory(templateJSONObject);
 
   return factory;
 }
