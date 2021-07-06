@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/NullVoxPopuli/ember-repl/compare/v1.3.1...v1.4.0) (2021-07-06)
+
+
+### Features
+
+* **utils:** add invocationName ([645e27d](https://github.com/NullVoxPopuli/ember-repl/commit/645e27d9a58358808ef1ca37c2814d377cd675d9))
+
 ## [1.3.1](https://github.com/NullVoxPopuli/ember-repl/compare/v1.3.0...v1.3.1) (2021-07-06)
 
 
