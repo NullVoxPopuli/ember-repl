@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/NullVoxPopuli/ember-repl/compare/v1.1.0...v1.2.0) (2021-07-06)
+
+
+### Features
+
+* **hbs, scope:** Merge pull request [#29](https://github.com/NullVoxPopuli/ember-repl/issues/29) from NullVoxPopuli/support-scope-for-hbs ([611f699](https://github.com/NullVoxPopuli/ember-repl/commit/611f699ef8953be9220c5b94e41170224deec6e6))
+
 # [1.1.0](https://github.com/NullVoxPopuli/ember-repl/compare/v1.0.3...v1.1.0) (2021-07-05)
 
 
