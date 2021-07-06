@@ -61,14 +61,16 @@ function compileTemplate(source: string, { moduleName, scope = {} }: CompileTemp
   };
 
   // Copied from @glimmer/compiler/lib/compiler#precompile
-  let [block /*, usedLocals */] = precompileJSON(source, options);
+  let [block, usedLocals] = precompileJSON(source, options);
+
+  let usedScope = usedLocals.map((key: string) => localScope[key]);
 
   let blockJSON = JSON.stringify(block);
   let templateJSONObject = {
     id: moduleName,
     block: blockJSON,
     moduleName: moduleName ?? '(unknown template module)',
-    scope: () => locals.map((key) => localScope[key]),
+    scope: () => usedScope,
     isStrictMode: true,
   };
 
