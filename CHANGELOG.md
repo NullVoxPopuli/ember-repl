@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/NullVoxPopuli/ember-repl/compare/v1.4.0...v1.4.1) (2021-07-06)
+
+
+### Bug Fixes
+
+* **utils:** add missing export ([aa897ad](https://github.com/NullVoxPopuli/ember-repl/commit/aa897ada98e45f2256e1e815555903e672ab9c31))
+
 # [1.4.0](https://github.com/NullVoxPopuli/ember-repl/compare/v1.3.1...v1.4.0) (2021-07-06)
 
 
