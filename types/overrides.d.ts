@@ -12,5 +12,5 @@ declare module '@ember/component' {
 
 // provided by vendor/ember/ember-template-compiler.js (somehow)
 declare module '@glimmer/syntax' {
-  export function getTemplateLocals(): unknown;
+  export function getTemplateLocals(template: string): string[];
 }
