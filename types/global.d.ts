@@ -13,6 +13,7 @@ declare module '@ember/helper';
 declare module '@ember/modifier';
 declare module '@ember/template-factory';
 declare module '@glimmer/babel-preset';
+declare module '@glimmer/compiler';
 
 declare module 'babel-plugin-htmlbars-inline-precompile';
 declare module '@babel/plugin-proposal-decorators';
