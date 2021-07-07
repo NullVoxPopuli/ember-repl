@@ -1,11 +1,12 @@
 import { getTemplateLocals } from '@glimmer/syntax';
 
-import * as Babel from '@babel/standalone';
 import HTMLBars, { preprocessEmbeddedTemplates } from 'babel-plugin-htmlbars-inline-precompile';
 import { precompile as precompileTemplate } from 'ember-template-compiler';
 
 import { nameFor } from '../utils';
 import { evalSnippet } from './eval';
+
+import type { Babel } from './types';
 
 export interface Info {
   code: string;
@@ -32,7 +33,13 @@ export async function compileJS(code: string) {
   return { name, component, error };
 }
 
+let babel: Babel;
+
 async function compileGJS({ code: input, name }: Info) {
+  if (!babel) {
+    babel = await import('@babel/standalone');
+  }
+
   let preprocessed = preprocessEmbeddedTemplates(input, {
     getTemplateLocals,
     relativePath: `${name}.js`,
@@ -43,7 +50,7 @@ async function compileGJS({ code: input, name }: Info) {
     getTemplateLocalsExportPath: 'getTemplateLocals',
   });
 
-  let result = Babel.transform(preprocessed.output, {
+  let result = babel.transform(preprocessed.output, {
     filename: `${name}.js`,
     plugins: [
       [
@@ -66,12 +73,12 @@ async function compileGJS({ code: input, name }: Info) {
           },
         },
       ],
-      [Babel.availablePlugins['proposal-decorators'], { legacy: true }],
-      [Babel.availablePlugins['proposal-class-properties']],
+      [babel.availablePlugins['proposal-decorators'], { legacy: true }],
+      [babel.availablePlugins['proposal-class-properties']],
     ],
     presets: [
       [
-        Babel.availablePresets['env'],
+        babel.availablePresets['env'],
         {
           // false -- keeps ES Modules
           modules: 'cjs',
