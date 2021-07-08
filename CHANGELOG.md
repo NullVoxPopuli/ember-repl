@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/NullVoxPopuli/ember-repl/compare/v1.4.1...v1.5.0) (2021-07-08)
+
+
+### Features
+
+* **js:** await import babel to protect initial load ([28c3c21](https://github.com/NullVoxPopuli/ember-repl/commit/28c3c215f9827358df5c98c0fbffd7cb7abdecb5))
+
 ## [1.4.1](https://github.com/NullVoxPopuli/ember-repl/compare/v1.4.0...v1.4.1) (2021-07-06)
 
 
