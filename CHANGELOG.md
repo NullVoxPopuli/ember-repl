@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/NullVoxPopuli/ember-repl/compare/v1.6.0...v1.6.1) (2021-07-10)
+
+
+### Bug Fixes
+
+* **js:** combine preconfigured required with window ([9483e89](https://github.com/NullVoxPopuli/ember-repl/commit/9483e89bb189b11e9800ad1dcf4bce382b3dacd5))
+
 # [1.6.0](https://github.com/NullVoxPopuli/ember-repl/compare/v1.5.0...v1.6.0) (2021-07-10)
 
 
