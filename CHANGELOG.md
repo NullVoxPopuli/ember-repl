@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/NullVoxPopuli/ember-repl/compare/v1.5.0...v1.6.0) (2021-07-10)
+
+
+### Features
+
+* **js:** use window.require during eval ([1249d11](https://github.com/NullVoxPopuli/ember-repl/commit/1249d1108f645d7bfb3ab71964aaf01b9b3d5e01))
+
 # [1.5.0](https://github.com/NullVoxPopuli/ember-repl/compare/v1.4.1...v1.5.0) (2021-07-08)
 
 
