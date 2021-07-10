@@ -46,7 +46,9 @@ const modules = {
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 function require(moduleName: keyof typeof modules): unknown {
-  return modules[moduleName];
+  let preConfigured = modules[moduleName];
+
+  return preConfigured || window.require(moduleName);
 }
 
 export function evalSnippet(compiled: string): {
@@ -54,12 +56,8 @@ export function evalSnippet(compiled: string): {
   services?: { [key: string]: unknown };
 } {
   const exports = {};
-  const require = window.require;
 
-  // Pass require to eval (which does nothing with more than one arg)
-  // so that dead-code-elimination doesn't remove the line
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  (eval as any)(compiled, require);
+  eval(compiled);
 
   return exports as { default: Component; services?: { [key: string]: unknown } };
 }
