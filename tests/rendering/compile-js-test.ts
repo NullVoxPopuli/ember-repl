@@ -59,4 +59,42 @@ module('compileJS()', function (hooks) {
     await click('button');
     assert.dom('output').hasText('2');
   });
+
+  test('can import components available to the app', async function (assert) {
+    assert.expect(3);
+
+    this.setProperties({
+      await: Await,
+      compile: async () => {
+        let template = `
+          import Component from '@glimmer/component';
+          import { tracked } from '@glimmer/tracking';
+          import { on } from '@ember/modifier';
+
+          import Example from 'dummy/components/example-component';
+
+          <template>
+            <Example />
+          </template>
+        `;
+
+        let { component, name, error } = await compileJS(template);
+
+        assert.notOk(error);
+        assert.ok(name);
+
+        return component;
+      },
+    });
+
+    await render(
+      hbs`
+        {{#let (this.compile) as |CustomComponent|}}
+          <this.await @promise={{CustomComponent}} />
+        {{/let}}
+      `
+    );
+
+    assert.dom().hasText('!!Example!!');
+  });
 });
