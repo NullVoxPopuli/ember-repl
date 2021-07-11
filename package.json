@@ -25,10 +25,12 @@
     "test:ember": "ember test",
     "test:ember-compatibility": "ember try:each",
     "prepack": "ember ts:precompile",
-    "postpack": "ember ts:clean"
+    "postpack": "ember ts:clean",
+    "postinstall": "rm -rf node_modules/@types/loader-utils"
   },
   "dependencies": {
     "@babel/standalone": "^7.14.7",
+    "@embroider/macros": "^0.42.3",
     "@glimmer/component": "^1.0.4",
     "@glimmer/tracking": "^1.0.4",
     "babel-plugin-htmlbars-inline-precompile": "^5.3.0",
@@ -45,6 +47,7 @@
     "@commitlint/config-conventional": "^12.1.4",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.2.8",
+    "@ember/test-waiters": "^2.4.4",
     "@embroider/test-setup": "^0.42.3",
     "@glimmer/interfaces": "^0.80.0",
     "@glimmer/reference": "^0.80.0",

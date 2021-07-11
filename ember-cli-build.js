@@ -19,7 +19,12 @@ module.exports = function (defaults) {
   const { maybeEmbroider } = require('@embroider/test-setup');
 
   return maybeEmbroider(app, {
+    // Embroider does not know how to resolve local helpers
+    // https://github.com/embroider-build/embroider/issues/894
     staticHelpers: false,
+    // Prevent the dummy app's components from getting removed
+    staticComponents: false,
+
     packageRules: [
       {
         package: 'dummy',
@@ -33,6 +38,8 @@ module.exports = function (defaults) {
     ],
     packagerOptions: {
       webpackConfig: {
+        // can't read default eval stuff in the output...
+        devtool: false,
         node: {
           global: false,
           __filename: true,

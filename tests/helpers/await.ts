@@ -2,6 +2,7 @@ import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { setComponentTemplate } from '@ember/component';
 import { isDestroyed, isDestroying } from '@ember/destroyable';
+import { waitForPromise } from '@ember/test-waiters';
 import { hbs } from 'ember-cli-htmlbars';
 
 interface Args {
@@ -15,7 +16,7 @@ export class Await extends Component<Args> {
   constructor(owner: unknown, args: Args) {
     super(owner, args);
 
-    args.promise
+    let promise = args.promise
       .then((resolved) => {
         if (isDestroying(this) || isDestroyed(this)) return;
 
@@ -27,6 +28,8 @@ export class Await extends Component<Args> {
         this.error = error;
         this.resolved = undefined;
       });
+
+    waitForPromise(promise);
   }
 
   get isPending() {
