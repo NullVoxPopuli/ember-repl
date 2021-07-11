@@ -1,56 +1,12 @@
 {
+  "files": [],
   "compilerOptions": {
-    "target": "es2020",
-    "allowJs": true,
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "strictNullChecks": true,
-    "strictPropertyInitialization": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noEmitOnError": true,
-    "noEmit": true,
-    "inlineSourceMap": true,
-    "inlineSources": true,
-    "baseUrl": ".",
-    "module": "ESNext",
-    "experimentalDecorators": true,
-    "paths": {
-      "dummy/tests/*": [
-        "tests/*"
-      ],
-      "dummy/*": [
-        "tests/dummy/app/*",
-        "app/*"
-      ],
-      "ember-repl": [
-        "addon"
-      ],
-      "ember-repl/*": [
-        "addon/*"
-      ],
-      "ember-repl/test-support": [
-        "addon-test-support"
-      ],
-      "ember-repl/test-support/*": [
-        "addon-test-support/*"
-      ],
-      "*": [
-        "types/*"
-      ]
-    }
+    "composite": true
   },
-  "include": [
-    "app/**/*",
-    "addon/**/*",
-    "tests/**/*",
-    "types/**/*",
-    "test-support/**/*",
-    "addon-test-support/**/*"
+  "exclude": ["declarations"],
+  "references": [
+    { "path": "addon" },
+    // { "path": "addon-test-support" },
+    { "path": "tests" }
   ]
 }

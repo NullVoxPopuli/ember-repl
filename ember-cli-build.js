@@ -19,6 +19,18 @@ module.exports = function (defaults) {
   const { maybeEmbroider } = require('@embroider/test-setup');
 
   return maybeEmbroider(app, {
+    staticHelpers: false,
+    packageRules: [
+      {
+        package: 'dummy',
+        helpers: {
+          '{{this.compile}}': { safeToIgnore: true },
+        },
+        components: {
+          '{{this.compile}}': { safeToIgnore: true },
+        },
+      },
+    ],
     packagerOptions: {
       webpackConfig: {
         node: {
