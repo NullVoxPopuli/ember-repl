@@ -5,9 +5,9 @@
   "keywords": [
     "ember-addon"
   ],
-  "repository": "",
+  "repository": "https://github.com/NullVoxPopuli/ember-repl",
   "license": "MIT",
-  "author": "",
+  "author": "NullVoxPopuli",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -23,7 +23,8 @@
     "start": "ember serve",
     "test": "npm-run-all lint test:*",
     "test:ember": "ember test",
-    "test:ember-compatibility": "ember try:each"
+    "test:ember-compatibility": "ember try:each",
+    "prepublishOnly": "yarn tsc --build"
   },
   "dependencies": {
     "@babel/standalone": "^7.14.7",
@@ -43,6 +44,9 @@
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.2.8",
     "@embroider/test-setup": "^0.42.3",
+    "@glimmer/interfaces": "^0.80.0",
+    "@glimmer/reference": "^0.80.0",
+    "@glimmer/util": "^0.80.0",
     "@nullvoxpopuli/eslint-configs": "^1.3.11",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
@@ -122,6 +126,14 @@
       "@semantic-release/github",
       "@semantic-release/git"
     ]
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "declarations/*",
+        "declarations/*/index"
+      ]
+    }
   },
   "volta": {
     "node": "14.17.3",
