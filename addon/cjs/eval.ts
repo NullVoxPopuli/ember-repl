@@ -20,7 +20,6 @@ import * as _string from '@ember/string';
 import { createTemplateFactory } from '@ember/template-factory';
 import * as _utils from '@ember/utils';
 
-
 import { importSync } from '@embroider/macros';
 
 import type Component from '@glimmer/component';
@@ -44,7 +43,6 @@ const modules = {
   '@glimmer/component': _GlimmerComponent,
   '@glimmer/tracking': _tracking,
 };
-
 
 export function evalSnippet(compiled: string): {
   default: Component;
