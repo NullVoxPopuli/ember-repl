@@ -27,6 +27,4 @@ jobs:
       - run: yarn install --frozen-lockfile
 
       - name: Type Checking
-        # skipping libs because of issue with @glimmer/{reference, runtime, util}
-        run: yarn tsc --skipLibCheck --noEmit
-        # run: yarn tsc --build
+        run: yarn prepack
