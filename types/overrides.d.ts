@@ -14,3 +14,4 @@ declare module '@ember/component' {
 declare module '@glimmer/syntax' {
   export function getTemplateLocals(template: string): string[];
 }
+
