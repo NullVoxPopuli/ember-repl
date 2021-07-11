@@ -3,6 +3,9 @@
 # compiled output
 /dist/
 /tmp/
+/declarations/
+/tests/dummy/declarations/
+*.tsbuildinfo
 
 # dependencies
 /bower_components/
