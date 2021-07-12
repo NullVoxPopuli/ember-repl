@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/NullVoxPopuli/ember-repl/compare/v1.6.2...v1.7.0) (2021-07-12)
+
+
+### Features
+
+* **js:** support passing extra modules to compileJS ([2356720](https://github.com/NullVoxPopuli/ember-repl/commit/23567208bef0a37ec60758b80722d5d6d0a942ef))
+
 ## [1.6.2](https://github.com/NullVoxPopuli/ember-repl/compare/v1.6.1...v1.6.2) (2021-07-12)
 
 

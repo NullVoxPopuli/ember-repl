@@ -1,6 +1,6 @@
 {
   "name": "ember-repl",
-  "version": "1.6.2",
+  "version": "1.7.0",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
     "ember-addon"
