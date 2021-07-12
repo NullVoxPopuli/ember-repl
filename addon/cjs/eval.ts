@@ -42,20 +42,20 @@ const modules = {
   '@glimmer/tracking': _tracking,
 };
 
-// https://github.com/glimmerjs/glimmer-experimental/blob/master/packages/examples/playground/src/utils/eval-snippet.ts
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-function require(moduleName: keyof typeof modules): unknown {
-  let preConfigured = modules[moduleName];
-
-  return preConfigured || window.require(moduleName);
-}
-
 export function evalSnippet(compiled: string): {
   default: Component;
   services?: { [key: string]: unknown };
 } {
   const exports = {};
+
+  // https://github.com/glimmerjs/glimmer-experimental/blob/master/packages/examples/playground/src/utils/eval-snippet.ts
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  function require(moduleName: keyof typeof modules): unknown {
+    let preConfigured = modules[moduleName];
+
+    return preConfigured || window.require(moduleName);
+  }
 
   eval(compiled);
 
