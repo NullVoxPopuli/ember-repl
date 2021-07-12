@@ -1,3 +1,10 @@
+## [1.6.2](https://github.com/NullVoxPopuli/ember-repl/compare/v1.6.1...v1.6.2) (2021-07-12)
+
+
+### Bug Fixes
+
+* **embroider:** allow local helpers, the hacky way ([877502d](https://github.com/NullVoxPopuli/ember-repl/commit/877502db8955951e45e670e34691a01cf09f675b))
+
 ## [1.6.1](https://github.com/NullVoxPopuli/ember-repl/compare/v1.6.0...v1.6.1) (2021-07-10)
 
 
