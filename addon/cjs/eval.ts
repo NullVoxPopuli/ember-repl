@@ -20,8 +20,6 @@ import * as _string from '@ember/string';
 import { createTemplateFactory } from '@ember/template-factory';
 import * as _utils from '@ember/utils';
 
-import { importSync } from '@embroider/macros';
-
 import type Component from '@glimmer/component';
 
 const modules = {
