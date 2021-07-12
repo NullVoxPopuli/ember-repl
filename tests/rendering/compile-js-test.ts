@@ -1,3 +1,5 @@
+import { setComponentTemplate } from '@ember/component';
+import templateOnly from '@ember/component/template-only';
 import { click, render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { module, test } from 'qunit';
@@ -99,5 +101,47 @@ module('compileJS()', function (hooks) {
     );
 
     assert.dom().hasText('!!Example!!');
+  });
+
+  test('extra modules may be passed, explicitly', async function (assert) {
+    assert.expect(3);
+
+    const AComponent = setComponentTemplate(hbs`Custom extra module`, templateOnly());
+
+    this.setProperties({
+      await: Await,
+      compile: async () => {
+        let template = `
+          import Component from '@glimmer/component';
+          import { tracked } from '@glimmer/tracking';
+          import { on } from '@ember/modifier';
+
+          import AComponent from 'my-silly-import-path/a-component';
+
+          <template>
+            <AComponent />
+          </template>
+        `;
+
+        let { component, name, error } = await compileJS(template, {
+          'my-silly-import-path/a-component': AComponent,
+        });
+
+        assert.notOk(error);
+        assert.ok(name);
+
+        return component;
+      },
+    });
+
+    await render(
+      hbs`
+        {{#let (this.compile) as |CustomComponent|}}
+          <this.await @promise={{CustomComponent}} />
+        {{/let}}
+      `
+    );
+
+    assert.dom().hasText('Custom extra module');
   });
 });

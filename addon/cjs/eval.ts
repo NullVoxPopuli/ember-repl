@@ -42,7 +42,12 @@ const modules = {
   '@glimmer/tracking': _tracking,
 };
 
-export function evalSnippet(compiled: string): {
+export type ExtraModules = Record<string, unknown>;
+
+export function evalSnippet(
+  compiled: string,
+  extraModules: ExtraModules = {}
+): {
   default: Component;
   services?: { [key: string]: unknown };
 } {
@@ -52,7 +57,7 @@ export function evalSnippet(compiled: string): {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   function require(moduleName: keyof typeof modules): unknown {
-    let preConfigured = modules[moduleName];
+    let preConfigured = modules[moduleName] || extraModules[moduleName];
 
     return preConfigured || window.require(moduleName);
   }
