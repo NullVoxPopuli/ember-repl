@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/NullVoxPopuli/ember-repl/compare/v1.7.0...v1.7.1) (2021-07-12)
+
+
+### Bug Fixes
+
+* **types:** use ec-ts' generated types instead of declarations file ([ec11711](https://github.com/NullVoxPopuli/ember-repl/commit/ec11711d05c84575998c84d82eca7d536d5c7393))
+
 # [1.7.0](https://github.com/NullVoxPopuli/ember-repl/compare/v1.6.2...v1.7.0) (2021-07-12)
 
 
