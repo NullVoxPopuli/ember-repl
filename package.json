@@ -1,7 +1,7 @@
 {
   "name": "ember-repl",
   "version": "1.7.1",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Addon for enabling REPL and Playground creation with Ember/Glimmer",
   "keywords": [
     "ember-addon"
   ],
