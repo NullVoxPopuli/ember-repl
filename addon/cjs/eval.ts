@@ -68,7 +68,12 @@ export function evalSnippet(
 }
 
 export async function swapUnknownForJSDelivr(text: string, extraModules: ExtraModules = {}) {
-  let known = [...Object.keys(extraModules), ...Object.keys(modules)];
+  let known = [
+    ...Object.keys(extraModules),
+    ...Object.keys(modules),
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    ...Object.keys((window.require as any)?.entries || {}),
+  ];
 
   let unknown = extractModulesNotMatching(text, known);
 
@@ -93,7 +98,7 @@ export async function swapUnknownForJSDelivr(text: string, extraModules: ExtraMo
 }
 
 function moduleToJSDelivr(moduleName: string) {
-  return `https://cdn.jsdelivr.net/npm/${moduleName}`;
+  return `https://cdn.jsdelivr.net/npm/${moduleName}?module`;
 }
 
 const IMPORT_EXTRACTOR = /(from '([^']+)')|(from "([^"]+)")/;
