@@ -155,10 +155,9 @@ module('compileJS()', function (hooks) {
           import Component from '@glimmer/component';
           import { tracked } from '@glimmer/tracking';
           import { on } from '@ember/modifier';
-          import { Changeset as createChangeset } from 'validated-changeset';
+          import _ from 'lodash-es';
 
-          const changeset = createChangeset({ two: 2 });
-          const two = changeset.get('two');
+          const two = _.last([1, 3, 4, 2]);
 
           <template>
             two: {{two}}
@@ -167,6 +166,7 @@ module('compileJS()', function (hooks) {
 
         let { component, name, error } = await compileJS(template);
 
+        console.error(error);
         assert.notOk(error);
         assert.ok(name);
 

@@ -40,7 +40,7 @@ const modules = {
 
   '@glimmer/component': _GlimmerComponent,
   '@glimmer/tracking': _tracking,
-};
+} as Record<string, unknown>;
 
 export type ExtraModules = Record<string, unknown>;
 
@@ -67,6 +67,11 @@ export function evalSnippet(
   return exports as { default: Component; services?: { [key: string]: unknown } };
 }
 
+/**
+ * TODO: if/when we compile to native modules instead of CJS, we will need to uncomment
+ *       out the bottom bit, and let the browser resolve those imports normally.
+ *
+ */
 export async function swapUnknownForJSDelivr(text: string, extraModules: ExtraModules = {}) {
   let known = [
     ...Object.keys(extraModules),
@@ -87,18 +92,40 @@ export async function swapUnknownForJSDelivr(text: string, extraModules: ExtraMo
     return map;
   }, {} as Record<string, string>);
 
-  let withExternalModules = text.replaceAll(
-    new RegExp(unknown.map((name) => `(${name})`).join('|'), 'g'),
-    (match) => {
-      return replacementMap[match];
-    }
+  await Promise.all(
+    Object.entries(replacementMap).map(async ([key, url]) => {
+      let protocolLess = url.replace(/https?:\/\//, '');
+
+      try {
+        // Favor ESM builds
+        /* webpackIgnore: true */
+        modules[key] = await import(`https://${protocolLess}/+esm`);
+      } catch (e) {
+        if (e instanceof TypeError) {
+          /* webpackIgnore: true */
+          modules[key] = await import(`https://${protocolLess}`);
+
+          return;
+        }
+
+        throw e;
+      }
+    })
   );
 
-  return withExternalModules;
+  // let withExternalModules = text.replaceAll(
+  //   new RegExp(unknown.map((name) => `(${name})`).join('|'), 'g'),
+  //   (match) => {
+  //     return replacementMap[match];
+  //   }
+  // );
+
+  return text;
 }
 
+// https://www.jsdelivr.com/esm
 function moduleToJSDelivr(moduleName: string) {
-  return `https://cdn.jsdelivr.net/npm/${moduleName}?module`;
+  return `https://cdn.jsdelivr.net/npm/${moduleName}`;
 }
 
 const IMPORT_EXTRACTOR = /(from '([^']+)')|(from "([^"]+)")/;
