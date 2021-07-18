@@ -66,3 +66,52 @@ export function evalSnippet(
 
   return exports as { default: Component; services?: { [key: string]: unknown } };
 }
+
+export async function swapUnknownForJSDelivr(text: string, extraModules: ExtraModules = {}) {
+  let known = [...Object.keys(extraModules), ...Object.keys(modules)];
+
+  let unknown = extractModulesNotMatching(text, known);
+
+  if (unknown.length === 0) {
+    return text;
+  }
+
+  let replacementMap = unknown.reduce((map, moduleName) => {
+    map[moduleName] = moduleToJSDelivr(moduleName);
+
+    return map;
+  }, {} as Record<string, string>);
+
+  let withExternalModules = text.replaceAll(
+    new RegExp(unknown.map((name) => `(${name})`).join('|'), 'g'),
+    (match) => {
+      return replacementMap[match];
+    }
+  );
+
+  return withExternalModules;
+}
+
+function moduleToJSDelivr(moduleName: string) {
+  return `https://cdn.jsdelivr.net/npm/${moduleName}`;
+}
+
+const IMPORT_EXTRACTOR = /(from '([^']+)')|(from "([^"]+)")/;
+
+function extractModulesNotMatching(text: string, moduleNames: string[]): string[] {
+  let matches = text.matchAll(new RegExp(IMPORT_EXTRACTOR, 'g'));
+
+  let notMatching = [];
+
+  for (let [, , singleQuoteMatch, doubleQuoteMatch] of matches) {
+    let match = singleQuoteMatch || doubleQuoteMatch;
+
+    if (!match) continue;
+
+    if (moduleNames.includes(match)) continue;
+
+    notMatching.push(match);
+  }
+
+  return notMatching;
+}

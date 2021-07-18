@@ -4,7 +4,7 @@ import HTMLBars, { preprocessEmbeddedTemplates } from 'babel-plugin-htmlbars-inl
 import { precompile as precompileTemplate } from 'ember-template-compiler';
 
 import { nameFor } from '../utils';
-import { evalSnippet } from './eval';
+import { evalSnippet, swapUnknownForJSDelivr } from './eval';
 
 import type { ExtraModules } from './eval';
 import type { Babel } from './types';
@@ -37,7 +37,8 @@ export async function compileJS(code: string, extraModules?: ExtraModules) {
   let error: undefined | Error;
 
   try {
-    let compiled = await compileGJS({ code: code, name });
+    let withExternalModules = await swapUnknownForJSDelivr(code, extraModules);
+    let compiled = await compileGJS({ code: withExternalModules, name });
 
     if (!compiled) {
       throw new Error(`Compiled output is missing`);

@@ -144,4 +144,44 @@ module('compileJS()', function (hooks) {
 
     assert.dom().hasText('Custom extra module');
   });
+
+  test('can import from npm (sorta, jsdelivr)', async function (assert) {
+    assert.expect(3);
+
+    this.setProperties({
+      await: Await,
+      compile: async () => {
+        let template = `
+          import Component from '@glimmer/component';
+          import { tracked } from '@glimmer/tracking';
+          import { on } from '@ember/modifier';
+          import { Changeset as createChangeset } from 'validated-changeset';
+
+          const changeset = createChangeset({ two: 2 });
+          const two = changeset.get('two');
+
+          <template>
+            two: {{two}}
+          </template>
+        `;
+
+        let { component, name, error } = await compileJS(template);
+
+        assert.notOk(error);
+        assert.ok(name);
+
+        return component;
+      },
+    });
+
+    await render(
+      hbs`
+        {{#let (this.compile) as |CustomComponent|}}
+          <this.await @promise={{CustomComponent}} />
+        {{/let}}
+      `
+    );
+
+    assert.dom().hasText('two: 2');
+  });
 });
