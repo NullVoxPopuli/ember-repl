@@ -1,5 +1,8 @@
 # ember-repl
 
+[![npm version](https://badge.fury.io/js/ember-repl.svg)](https://badge.fury.io/js/ember-repl)
+[![CI](https://github.com/NullVoxPopuli/ember-repl/actions/workflows/ci.yml/badge.svg?branch=main&event=push)](https://github.com/NullVoxPopuli/ember-repl/actions/workflows/ci.yml)
+
 Tools for easily creating your own Ember Playground / REPL and/or Interactive
 StyleGuide for your design system.
 
