@@ -29,7 +29,7 @@
     "postinstall": "rm -rf node_modules/@types/loader-utils"
   },
   "dependencies": {
-    "@babel/standalone": "^7.14.7",
+    "@babel/standalone": "^7.14.8",
     "@embroider/macros": "^0.43.1",
     "@glimmer/component": "^1.0.4",
     "@glimmer/tracking": "^1.0.4",
