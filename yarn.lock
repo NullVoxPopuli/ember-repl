@@ -1229,22 +1229,22 @@
     resolve "^1.8.1"
     semver "^7.3.2"
 
-"@embroider/macros@^0.43.2":
-  version "0.43.2"
-  resolved "https://registry.yarnpkg.com/@embroider/macros/-/macros-0.43.2.tgz#4ba685b3f014f74f113c9ceb87a194bebfb50ee5"
-  integrity sha512-l+OLxYVIJEl6T0fRsrTI2EqgEZGPPAaFHAJOsTwpsU7BzfXjF8bhX6d1eNO3p+y9WO4zGCfPGgO7sr5gptSVCA==
+"@embroider/macros@^0.43.3":
+  version "0.43.3"
+  resolved "https://registry.yarnpkg.com/@embroider/macros/-/macros-0.43.3.tgz#83b0bf684ffbc4a71c3c05a35a84faac5ff86ac7"
+  integrity sha512-rtT57t0qHL+Sz1HGj9avJyOnrW26Pz9VJ3y5Mbcp090JQCFXLjSYS2IYkfxvkptabBtKmbg3d6BkW8owxJirwg==
   dependencies:
-    "@embroider/shared-internals" "0.43.2"
+    "@embroider/shared-internals" "0.43.3"
     assert-never "^1.2.1"
     ember-cli-babel "^7.26.6"
     lodash "^4.17.21"
     resolve "^1.20.0"
     semver "^7.3.2"
 
-"@embroider/shared-internals@0.43.2":
-  version "0.43.2"
-  resolved "https://registry.yarnpkg.com/@embroider/shared-internals/-/shared-internals-0.43.2.tgz#e90010653251d59c84d72d5f340a032e1a5b2bc1"
-  integrity sha512-sZ0RobxdSvvF0PzFf8xZ6XClKQyysb69r7/N51MDeS4JLUhB6Z8bPdMit6j0tM+RdCfZU6FokC3t7gME9VfCXA==
+"@embroider/shared-internals@0.43.3":
+  version "0.43.3"
+  resolved "https://registry.yarnpkg.com/@embroider/shared-internals/-/shared-internals-0.43.3.tgz#9a7e69ce6d57be7efdf142d8a83d7e3656d6951a"
+  integrity sha512-3t1zhZVW6+mtQ9ftdKmAezMoX6oBYpLeYnrJz6t4N3k4DrpcEPX4RWUmWThN4XhLemkH4LvtTXP5S6q4XMopRA==
   dependencies:
     ember-rfc176-data "^0.3.17"
     fs-extra "^9.1.0"
@@ -1266,10 +1266,10 @@
     semver "^7.3.2"
     typescript-memoize "^1.0.0-alpha.3"
 
-"@embroider/test-setup@^0.43.2":
-  version "0.43.2"
-  resolved "https://registry.yarnpkg.com/@embroider/test-setup/-/test-setup-0.43.2.tgz#ec7a2a54d234a90fe5fcc87d5dba8d9dd25053ae"
-  integrity sha512-7Z4SyEtU6YAUKBnvBCYOzoev5NUPjihXuujEhD3TJE1h4fAdyP15MLNMAfe+y/xIWDY64CvAn+c8sn8eKDGNjA==
+"@embroider/test-setup@^0.43.3":
+  version "0.43.3"
+  resolved "https://registry.yarnpkg.com/@embroider/test-setup/-/test-setup-0.43.3.tgz#a4729b676e5342e997f20922f8d1e397909f5fa6"
+  integrity sha512-BtG13+8WhpLChxv+phnBK6qTyZtePaFmgUfm3X2VoGz6VI4v9a9zYn7AU9StffwwGKMuB5671nKiEg6hw0gTTA==
   dependencies:
     lodash "^4.17.21"
     resolve "^1.20.0"
