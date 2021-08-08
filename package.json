@@ -1,6 +1,6 @@
 {
   "name": "ember-repl",
-  "version": "1.7.9",
+  "version": "1.7.10",
   "description": "Addon for enabling REPL and Playground creation with Ember/Glimmer",
   "keywords": [
     "ember-addon"
