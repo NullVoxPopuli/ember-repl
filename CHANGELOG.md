@@ -1,3 +1,10 @@
+## [1.7.11](https://github.com/NullVoxPopuli/ember-repl/compare/v1.7.10...v1.7.11) (2021-08-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-compatibility-helpers to ^1.2.5 ([0683999](https://github.com/NullVoxPopuli/ember-repl/commit/068399954dac4d79eb0d72854a4da1f9e8a7080e))
+
 ## [1.7.10](https://github.com/NullVoxPopuli/ember-repl/compare/v1.7.9...v1.7.10) (2021-08-08)
 
 
