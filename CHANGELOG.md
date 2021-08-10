@@ -1,3 +1,10 @@
+## [1.7.13](https://github.com/NullVoxPopuli/ember-repl/compare/v1.7.12...v1.7.13) (2021-08-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-auto-import to ^2.1.0 ([c278afb](https://github.com/NullVoxPopuli/ember-repl/commit/c278afbe5617ef991e749f91366173553d1a7bf3))
+
 ## [1.7.12](https://github.com/NullVoxPopuli/ember-repl/compare/v1.7.11...v1.7.12) (2021-08-10)
 
 
