@@ -38,18 +38,18 @@ import { tracked } from '@glimmer/tracking';
 import { compileJS } from 'ember-repl';
 
 export class Renderer extends Component {
-  @tracked myComponent;
+  @tracked compileResult;
 
   constructor(...args) {
     super(...args);
 
-    compileJS('...').then(({ component }) => this.myComponent = component);
+    compileJS('...').then((compileResult) => this.compileResult = compileResult);
   }
 }
 ```
 ```hbs
-{{#if this.myComponent}}
-  <this.myComponent />
+{{#if this.compileResult.component}}
+  <this.compileResult.component />
 {{/if}}
 ```
 
@@ -60,11 +60,11 @@ import Component from '@glimmer/component';
 import { compileHBS } from 'ember-repl';
 
 export class Renderer extends Component {
-  myComponent = compileHBS(this.args.input).component;
+  compileResult = compileHBS(this.args.input);
 }
 ```
 ```hbs
-<this.myComponent />
+<this.compileResult.component />
 ```
 
 ### Modifiers and Helpers
@@ -143,15 +143,28 @@ still apply)
 
 ### API
 
-- `compileJS`: async `{ component, error, name }` - compiles a single JS file
+#### Methods
+
+- `compileJS`: async, returns `compileResult` - compiles a single JS file
    uses the syntax from [ember-template-imports](https://github.com/ember-template-imports/ember-template-imports)
-- `compileHBS`: `{ component, error, name }` - compiles a template-only component with no dependencies
+- `compileHBS`: returns `compileResult` - compiles a template-only component with no dependencies
 - `invocationOf`: `string` - converts hyphenated text to an `<AngleBracketInvocation />`
 - `nameFor`: `string` - generates a component-safe GUID-like derivation from code
 
-_`component`_: invokable from templates
-_`error`_: if there is a compilation error, this will be non-falsey
-_`name`_: the name assigned to the input text via UUIDv5
+#### Properties
+
+```ts
+interface CompileResult {
+  // invokable from templates
+  component?: unknown;
+
+  // if there is a compilation error, this will be non-falsey
+  error?: Error;
+
+  // the name assigned to the input text via UUIDv5
+  name: string;
+}
+```
 
 ### Using in an app that uses Embroider
 
