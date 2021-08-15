@@ -60,7 +60,7 @@ import Component from '@glimmer/component';
 import { compileHBS } from 'ember-repl';
 
 export class Renderer extends Component {
-  myComponent = compileHBS(this.args.input);
+  myComponent = compileHBS(this.args.input).component;
 }
 ```
 ```hbs
