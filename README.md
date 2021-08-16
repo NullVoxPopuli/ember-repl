@@ -67,6 +67,30 @@ export class Renderer extends Component {
 <this.compileResult.component />
 ```
 
+### Using existing components
+
+`ember-repl` is strict-mode only, so any component that you want to invoke 
+needs to be passed to the scope option of `compileHBS` or `compileJS`.
+Following code is assuming that right next to our `Renderer` component
+there is a component named `Bar`.
+
+```js
+import Component from '@glimmer/component';
+import { compileHBS } from 'ember-repl';
+import BarComponent from './bar'
+
+export class Renderer extends Component {
+  compileResult = compileHBS(
+    '<Bar />',
+    { 
+      scope: { 
+        Bar: BarComponent 
+      } 
+    }
+  );
+}
+```
+
 ### Modifiers and Helpers
 
 When writing components / demos / examples using this library, you must use
