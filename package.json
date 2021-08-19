@@ -47,7 +47,7 @@
     "@commitlint/config-conventional": "^13.1.0",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.4.1",
-    "@ember/test-waiters": "^2.4.5",
+    "@ember/test-waiters": "^3.0.0",
     "@embroider/test-setup": "^0.43.5",
     "@glimmer/interfaces": "^0.80.0",
     "@glimmer/reference": "^0.80.0",
