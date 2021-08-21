@@ -1687,10 +1687,10 @@
     node-gyp "^7.1.0"
     read-package-json-fast "^2.0.1"
 
-"@nullvoxpopuli/eslint-configs@^1.3.26":
-  version "1.3.26"
-  resolved "https://registry.yarnpkg.com/@nullvoxpopuli/eslint-configs/-/eslint-configs-1.3.26.tgz#ed835b7cbfdcfa5113543fb5f9aae5955e7b2262"
-  integrity sha512-5C+FGX8GuQ89rlpMjFASWlxenO5fioRRxvsGyt+mXNcPrWNtmY+VKZJfuPBlcTrgHCD7EwDUJDVJgsctLX7IBA==
+"@nullvoxpopuli/eslint-configs@^1.3.27":
+  version "1.3.27"
+  resolved "https://registry.yarnpkg.com/@nullvoxpopuli/eslint-configs/-/eslint-configs-1.3.27.tgz#7b0dfdbdf119ef363f4a8c54c7bfb8a4e1bf1256"
+  integrity sha512-f+3gngLuKPr0SRlccdxPQJbAS4lDG2iY6AS8nYSwvw8wrDyiDUhiZKanwx0Z1sCckavb0Qr8+zRO5kjmqZJJ2Q==
   dependencies:
     "@typescript-eslint/eslint-plugin" "4.29.2"
     "@typescript-eslint/parser" "4.29.2"
@@ -1702,7 +1702,7 @@
     eslint-plugin-import "^2.24.1"
     eslint-plugin-json "^3.1.0"
     eslint-plugin-node "11.1.0"
-    eslint-plugin-prettier "3.4.0"
+    eslint-plugin-prettier "3.4.1"
     eslint-plugin-qunit "6.2.0"
     eslint-plugin-simple-import-sort "^7.0.0"
     prettier "2.3.2"
@@ -6594,7 +6594,14 @@ eslint-plugin-node@11.1.0, eslint-plugin-node@^11.1.0:
     resolve "^1.10.1"
     semver "^6.1.0"
 
-eslint-plugin-prettier@3.4.0, eslint-plugin-prettier@^3.4.0:
+eslint-plugin-prettier@3.4.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-prettier/-/eslint-plugin-prettier-3.4.1.tgz#e9ddb200efb6f3d05ffe83b1665a716af4a387e5"
+  integrity sha512-htg25EUYUeIhKHXjOinK4BgCcDwtLHjqaxCDsMy5nbnUMkKFvIhMVCp+5GFUXQ4Nr8lBsPqtGAqBenbpFqAA2g==
+  dependencies:
+    prettier-linter-helpers "^1.0.0"
+
+eslint-plugin-prettier@^3.4.0:
   version "3.4.0"
   resolved "https://registry.npmjs.org/eslint-plugin-prettier/-/eslint-plugin-prettier-3.4.0.tgz#cdbad3bf1dbd2b177e9825737fe63b476a08f0c7"
   integrity sha512-UDK6rJT6INSfcOo545jiaOwB701uAIt2/dR7WnFQoGCVl1/EMqdANBmwUaqqQ45aXprsTGzSa39LI1PyuRBxxw==
