@@ -6426,23 +6426,10 @@ eslint-plugin-decorator-position@2.2.29, eslint-plugin-decorator-position@^2.2.2
     ember-rfc176-data "^0.3.12"
     snake-case "^3.0.3"
 
-eslint-plugin-ember@10.5.4:
+eslint-plugin-ember@10.5.4, eslint-plugin-ember@^10.5.4:
   version "10.5.4"
   resolved "https://registry.yarnpkg.com/eslint-plugin-ember/-/eslint-plugin-ember-10.5.4.tgz#263a104b297b60d854640612fec9f2d071302e78"
   integrity sha512-7Z6H47tD4MNFGN51j00YMKjsHjN1z4u8vA1uImSYrgYHLh5nZKyP8pFBFI8pXBicw96N/njH48iz4zjZqMcPlQ==
-  dependencies:
-    "@ember-data/rfc395-data" "^0.0.4"
-    css-tree "^1.0.0-alpha.39"
-    ember-rfc176-data "^0.3.15"
-    eslint-utils "^3.0.0"
-    lodash.kebabcase "^4.1.1"
-    requireindex "^1.2.0"
-    snake-case "^3.0.3"
-
-eslint-plugin-ember@^10.5.3:
-  version "10.5.3"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-ember/-/eslint-plugin-ember-10.5.3.tgz#fc5bf5f6f4c66bd166060931f3c12fbb15f44c8a"
-  integrity sha512-73VoHoerrr81rk9gdeedcHwCXinJCEyMEHimXKtcFwr3lcMvE+yCkV/w0q8Eqj0Rpuo1ifLOU4S2OMptdNPhbA==
   dependencies:
     "@ember-data/rfc395-data" "^0.0.4"
     css-tree "^1.0.0-alpha.39"
@@ -6459,27 +6446,6 @@ eslint-plugin-es@^3.0.0:
   dependencies:
     eslint-utils "^2.0.0"
     regexpp "^3.0.0"
-
-eslint-plugin-import@^2.24.1:
-  version "2.24.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-import/-/eslint-plugin-import-2.24.1.tgz#64aba8b567a1ba9921d5465586e86c491b8e2135"
-  integrity sha512-KSFWhNxPH8OGJwpRJJs+Z7I0a13E2iFQZJIvSnCu6KUs4qmgAm3xN9GYBCSoiGWmwA7gERZPXqYQjcoCROnYhQ==
-  dependencies:
-    array-includes "^3.1.3"
-    array.prototype.flat "^1.2.4"
-    debug "^2.6.9"
-    doctrine "^2.1.0"
-    eslint-import-resolver-node "^0.3.6"
-    eslint-module-utils "^2.6.2"
-    find-up "^2.0.0"
-    has "^1.0.3"
-    is-core-module "^2.6.0"
-    minimatch "^3.0.4"
-    object.values "^1.1.4"
-    pkg-up "^2.0.0"
-    read-pkg-up "^3.0.0"
-    resolve "^1.20.0"
-    tsconfig-paths "^3.10.1"
 
 eslint-plugin-import@^2.24.2:
   version "2.24.2"
@@ -8913,7 +8879,7 @@ json5@^1.0.1:
   dependencies:
     minimist "^1.2.0"
 
-json5@^2.1.2, json5@^2.2.0:
+json5@^2.1.2:
   version "2.2.0"
   resolved "https://registry.npmjs.org/json5/-/json5-2.2.0.tgz#2dfefe720c6ba525d9ebd909950f0515316c89a3"
   integrity sha512-f+8cldu7X/y7RAJurMEJmdoKXGB/X550w2Nr3tTbezL6RwEE/iMcm+tZnXeoZtKuOq6ft8+CqzEkrIgx1fPoQA==
@@ -13327,15 +13293,6 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
   integrity sha1-yy4SAwZ+DI3h9hQJS5/kVwTqYAM=
-
-tsconfig-paths@^3.10.1:
-  version "3.10.1"
-  resolved "https://registry.yarnpkg.com/tsconfig-paths/-/tsconfig-paths-3.10.1.tgz#79ae67a68c15289fdf5c51cb74f397522d795ed7"
-  integrity sha512-rETidPDgCpltxF7MjBZlAFPUHv5aHH2MymyPvh+vEyWAED4Eb/WeMbsnD/JDr4OKPOA1TssDHgIcpTN5Kh0p6Q==
-  dependencies:
-    json5 "^2.2.0"
-    minimist "^1.2.0"
-    strip-bom "^3.0.0"
 
 tsconfig-paths@^3.11.0:
   version "3.11.0"
