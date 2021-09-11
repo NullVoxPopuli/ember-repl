@@ -69,7 +69,7 @@ export class Renderer extends Component {
 
 ### Using existing components
 
-`ember-repl` is strict-mode only, so any component that you want to invoke 
+`ember-repl` is strict-mode only, so any component that you want to invoke
 needs to be passed to the scope option of `compileHBS` or `compileJS`.
 Following code is assuming that right next to our `Renderer` component
 there is a component named `Bar`.
@@ -82,10 +82,10 @@ import BarComponent from './bar'
 export class Renderer extends Component {
   compileResult = compileHBS(
     '<Bar />',
-    { 
-      scope: { 
-        Bar: BarComponent 
-      } 
+    {
+      scope: {
+        Bar: BarComponent
+      }
     }
   );
 }
@@ -210,6 +210,39 @@ packagerOptions: {
   },
 },
 ```
+
+If you are using ember-repl to showcase a styleguide _and_ have maximum strictness enabled in embroider,
+you'll need to manually (or programatically) list out each of the components you want to force to be
+included in the build output using the `buildComponentMap` function in your `ember-cli-build.js`.
+For example:
+
+```js
+const { Webpack } = require('@embroider/webpack');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
+return require('@embroider/compat').compatBuild(app, Webpack, {
+  extraPublicTrees: [
+    require('ember-repl').buildComponentMap([
+      'limber/components/limber/menu',
+      'limber/components/limber/header',
+      'limber/components/external-link',
+      'limber/components/popper-j-s',
+      'ember-repl',
+    ]),
+  ],
+  // ...
+});
+```
+
+this emits an `/ember-repl/component-map.js` file in your public tree,
+which can then be `await import`ed and used via:
+
+```js
+let { COMPONENT_MAP } = await import('/ember-repl/component-map.js');
+
+let { component, error, name } = await compileJS(code, COMPONENT_MAP);
+```
+
 
 ## Security
 
