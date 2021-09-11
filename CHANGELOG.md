@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/NullVoxPopuli/ember-repl/compare/v1.7.14...v1.8.0) (2021-09-11)
+
+
+### Features
+
+* add `buildComponentMap` to index.js to help with tree shaking ([742ef80](https://github.com/NullVoxPopuli/ember-repl/commit/742ef80897c7379b4d726d5ea23e15fbaf583da2))
+
 ## [1.7.14](https://github.com/NullVoxPopuli/ember-repl/compare/v1.7.13...v1.7.14) (2021-08-11)
 
 
