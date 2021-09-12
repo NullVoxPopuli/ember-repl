@@ -6047,9 +6047,9 @@ ember-qunit@^5.1.4:
     silent-error "^1.1.1"
     validate-peer-dependencies "^1.1.0"
 
-ember-resolver@^8.0.2:
+ember-resolver@^8.0.3:
   version "8.0.3"
-  resolved "https://registry.npmjs.org/ember-resolver/-/ember-resolver-8.0.3.tgz#40f243aa58281bf195c695fe84a6b291e204690a"
+  resolved "https://registry.yarnpkg.com/ember-resolver/-/ember-resolver-8.0.3.tgz#40f243aa58281bf195c695fe84a6b291e204690a"
   integrity sha512-fA53fxfG821BRqNiB9mQDuzZpzSRcSAYZTYBlRQOHsJwoYdjyE7idz4YcytbSsa409G5J2kP6B+PiKOBh0odlw==
   dependencies:
     babel-plugin-debug-macros "^0.3.4"
