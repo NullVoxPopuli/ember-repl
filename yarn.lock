@@ -2373,7 +2373,7 @@
   resolved "https://registry.npmjs.org/@types/uuid/-/uuid-8.3.1.tgz#1a32969cf8f0364b3d8c8af9cc3555b7805df14f"
   integrity sha512-Y2mHTRAbqfFkpjldbkHGY8JIzRN6XqYRliG8/24FcHm2D2PwW24fl5xMRTVGdrb7iMrwCaIEbLWerGIkXuFWVg==
 
-"@typescript-eslint/eslint-plugin@4.31.0", "@typescript-eslint/eslint-plugin@^4.29.3":
+"@typescript-eslint/eslint-plugin@4.31.0", "@typescript-eslint/eslint-plugin@^4.31.0":
   version "4.31.0"
   resolved "https://registry.npmjs.org/@typescript-eslint/eslint-plugin/-/eslint-plugin-4.31.0.tgz#9c3fa6f44bad789a962426ad951b54695bd3af6b"
   integrity sha512-iPKZTZNavAlOhfF4gymiSuUkgLne/nh5Oz2/mdiUmuZVD42m9PapnCnzjxuDsnpnbH3wT5s2D8bw6S39TC6GNw==
@@ -2398,7 +2398,7 @@
     eslint-scope "^5.1.1"
     eslint-utils "^3.0.0"
 
-"@typescript-eslint/parser@4.31.0", "@typescript-eslint/parser@^4.29.3":
+"@typescript-eslint/parser@4.31.0", "@typescript-eslint/parser@^4.31.0":
   version "4.31.0"
   resolved "https://registry.npmjs.org/@typescript-eslint/parser/-/parser-4.31.0.tgz#87b7cd16b24b9170c77595d8b1363f8047121e05"
   integrity sha512-oWbzvPh5amMuTmKaf1wp0ySxPt2ZXHnFQBN2Szu1O//7LmOvgaKTCIDNLK2NvzpmVd5A2M/1j/rujBqO37hj3w==
@@ -6119,9 +6119,9 @@ ember-source@~3.28.1:
     semver "^7.3.4"
     silent-error "^1.1.1"
 
-ember-template-lint@^3.6.0:
+ember-template-lint@^3.7.0:
   version "3.7.0"
-  resolved "https://registry.npmjs.org/ember-template-lint/-/ember-template-lint-3.7.0.tgz#e0565102b291974afeb65de6933f0d154be508d3"
+  resolved "https://registry.yarnpkg.com/ember-template-lint/-/ember-template-lint-3.7.0.tgz#e0565102b291974afeb65de6933f0d154be508d3"
   integrity sha512-C3oFFdB+g14CvFKZrnAS8Yt0IojTpOhdU5KZoLUs6hOgQjkEF4l/OCBNPtBmL8Nm/dxmc5iTsd5TL98CCcnK+w==
   dependencies:
     "@ember-template-lint/todo-utils" "^10.0.0"
@@ -11186,7 +11186,7 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@2.4.0, prettier@^2.3.2:
+prettier@2.4.0, prettier@^2.4.0:
   version "2.4.0"
   resolved "https://registry.npmjs.org/prettier/-/prettier-2.4.0.tgz#85bdfe0f70c3e777cf13a4ffff39713ca6f64cba"
   integrity sha512-DsEPLY1dE5HF3BxCRBmD4uYZ+5DCbvatnolqTqcxEgKVZnL2kUfyu7b8pPQ5+hTBkdhU9SLUmK0/pHb07RE4WQ==
