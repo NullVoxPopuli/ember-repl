@@ -1936,9 +1936,9 @@
   resolved "https://registry.npmjs.org/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
 
-"@types/babel__core@^7.1.15":
+"@types/babel__core@^7.1.16":
   version "7.1.16"
-  resolved "https://registry.npmjs.org/@types/babel__core/-/babel__core-7.1.16.tgz#bc12c74b7d65e82d29876b5d0baf5c625ac58702"
+  resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.1.16.tgz#bc12c74b7d65e82d29876b5d0baf5c625ac58702"
   integrity sha512-EAEHtisTMM+KaKwfWdC3oyllIqswlznXCIVCt7/oRNrh+DhgT4UEBNC/jlADNjvw7UnfbcdkGQcPVZ1xYiLcrQ==
   dependencies:
     "@babel/parser" "^7.1.0"
@@ -2097,7 +2097,7 @@
     "@types/ember__object" "*"
     "@types/jquery" "*"
 
-"@types/ember__controller@*", "@types/ember__controller@^3.16.5":
+"@types/ember__controller@*", "@types/ember__controller@^3.16.6":
   version "3.16.6"
   resolved "https://registry.npmjs.org/@types/ember__controller/-/ember__controller-3.16.6.tgz#1fbb5f9483b9b9fd59b78f7289e6bd382e457f9c"
   integrity sha512-oltv4YaMljVMvhXJMT/UFmAQOJgYbnNUBGgOsclctpb9FYkimsJm8xIAoEmP5wBekzjeNd5UDf9F1DxSDpqgGw==
