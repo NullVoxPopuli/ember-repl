@@ -8,12 +8,22 @@
   "repository": "https://github.com/NullVoxPopuli/ember-repl",
   "license": "MIT",
   "author": "NullVoxPopuli",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "typings": "dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "module": "./dist/esm/index.js"
+    }
+  },
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
   "scripts": {
-    "build": "ember build --environment=production",
+    "prebuild": "rm -rf ./dist",
+    "build": "node ./esbuild.js",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel \"lint:!(fix)\"",
     "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
     "lint:hbs": "ember-template-lint .",
@@ -24,12 +34,11 @@
     "test": "npm-run-all lint test:*",
     "test:ember": "ember test",
     "test:ember-compatibility": "ember try:each",
-    "prepack": "ember ts:precompile",
-    "postpack": "ember ts:clean",
-    "postinstall": "rm -rf node_modules/@types/loader-utils"
+    "prepack": "yarn build"
   },
   "dependencies": {
     "@babel/standalone": "^7.15.7",
+    "@embroider/addon-shim": "^0.45.0",
     "@embroider/macros": "^0.44.2",
     "@glimmer/component": "^1.0.4",
     "@glimmer/tracking": "^1.0.4",
@@ -102,6 +111,7 @@
     "ember-source-channel-url": "^3.0.0",
     "ember-template-lint": "^3.7.0",
     "ember-try": "^1.4.0",
+    "esbuild": "^0.13.3",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-decorator-position": "^2.2.29",
@@ -119,6 +129,10 @@
     "semantic-release": "^18.0.0",
     "typescript": "^4.4.3",
     "webpack": "^5.54.0"
+  },
+  "peerDependencies": {
+    "ember-auto-import": "^2.2.0",
+    "ember-source": "^3.27.0 || ^4.0.0"
   },
   "release": {
     "branches": [
@@ -142,6 +156,9 @@
     "node": "10.* || >= 12.22.1"
   },
   "ember": {
+    "version": 2,
+    "type": "addon",
+    "main": "ember-addon-main.js",
     "edition": "octane"
   },
   "ember-addon": {
