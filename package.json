@@ -11,6 +11,10 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "typings": "dist/esm/index.d.ts",
+  "browser": {
+    "path": "path-browserify",
+    "ember-template-compiler": "ember-source/dist/ember-template-compiler.js"
+  },
   "exports": {
     ".": {
       "require": "./dist/cjs/index.js",
