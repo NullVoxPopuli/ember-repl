@@ -36,21 +36,21 @@ module.exports = function (defaults) {
         },
       },
     ],
-    // packagerOptions: {
-    //   webpackConfig: {
-    //     // can't read default eval stuff in the output...
-    //     devtool: false,
-    //     node: {
-    //       global: false,
-    //       __filename: true,
-    //       __dirname: true,
-    //     },
-    //     resolve: {
-    //       fallback: {
-    //         path: 'path-browserify',
-    //       },
-    //     },
-    //   },
-    // },
+    packagerOptions: {
+      webpackConfig: {
+        // can't read default eval stuff in the output...
+        devtool: false,
+        node: {
+          global: false,
+          __filename: true,
+          __dirname: true,
+        },
+        resolve: {
+          fallback: {
+            path: 'path-browserify',
+          },
+        },
+      },
+    },
   });
 };
