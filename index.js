@@ -9,23 +9,23 @@ module.exports = {
     'ember-cli-babel': {
       enableTypeScriptTransform: true,
     },
-    babel: {
-      plugins: [require.resolve('ember-auto-import/babel-plugin')],
-    },
-    autoImport: {
-      webpack: {
-        node: {
-          global: false,
-          __filename: true,
-          __dirname: true,
-        },
-        resolve: {
-          fallback: {
-            path: 'path-browserify',
-          },
-        },
-      },
-    },
+    // babel: {
+    //   plugins: [require.resolve('ember-auto-import/babel-plugin')],
+    // },
+    // autoImport: {
+    //   webpack: {
+    //     node: {
+    //       global: false,
+    //       __filename: true,
+    //       __dirname: true,
+    //     },
+    //     resolve: {
+    //       fallback: {
+    //         path: 'path-browserify',
+    //       },
+    //     },
+    //   },
+    // },
   },
 
   included(app) {
