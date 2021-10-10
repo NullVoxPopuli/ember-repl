@@ -9,9 +9,9 @@ module.exports = {
     'ember-cli-babel': {
       enableTypeScriptTransform: true,
     },
-    // babel: {
-    //   plugins: [require.resolve('ember-auto-import/babel-plugin')],
-    // },
+    babel: {
+      plugins: [require.resolve('ember-auto-import/babel-plugin')],
+    },
     // autoImport: {
     //   webpack: {
     //     node: {
