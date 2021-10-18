@@ -44,9 +44,7 @@ jobs:
       - run: yarn install --frozen-lockfile
 
       - name: Semantic Release
-        run: yarn semantic-release -v
-
-
+        run: yarn semantic-release --dry-run
 
   # docs:
   #   if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
