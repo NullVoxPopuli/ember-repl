@@ -32,6 +32,19 @@ jobs:
       - name: Templates
         run: yarn lint:hbs
 
+  tooling:
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
+    name: Tooling
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: volta-cli/action@v1
+
+      - run: yarn install --frozen-lockfile
+
+      - name: Semantic Release
+        run: yarn semantic-release --dry-run
 
   # docs:
   #   if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
