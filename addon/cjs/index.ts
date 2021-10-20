@@ -1,8 +1,9 @@
 import { getTemplateLocals } from '@glimmer/syntax';
+import { precompileTemplate } from '@ember/template-compilation';
 
-import HTMLBars, { preprocessEmbeddedTemplates } from 'babel-plugin-htmlbars-inline-precompile';
-import { precompile as precompileTemplate } from 'ember-template-compiler';
+import makePlugin from 'babel-plugin-ember-template-compilation';
 
+// import HTMLBars, { preprocessEmbeddedTemplates } from 'babel-plugin-htmlbars-inline-precompile';
 import { nameFor } from '../utils';
 import { evalSnippet } from './eval';
 
@@ -72,24 +73,28 @@ async function compileGJS({ code: input, name }: Info) {
     filename: `${name}.js`,
     plugins: [
       [
-        HTMLBars,
-        {
+        makePlugin({
           precompile: precompileTemplate,
-          // this needs to be true until Ember 3.27+
-          ensureModuleApiPolyfill: false,
-          modules: {
-            'ember-template-imports': {
-              export: 'hbs',
-              useTemplateLiteralProposalSemantics: 1,
-            },
+        }),
 
-            'TEMPLATE-TAG-MODULE': {
-              export: 'GLIMMER_TEMPLATE',
-              debugName: '<template>',
-              useTemplateTagProposalSemantics: 1,
-            },
-          },
-        },
+        // HTMLBars,
+        // {
+        //   precompile: precompileTemplate,
+        //   // this needs to be true until Ember 3.27+
+        //   ensureModuleApiPolyfill: false,
+        //   modules: {
+        //     'ember-template-imports': {
+        //       export: 'hbs',
+        //       useTemplateLiteralProposalSemantics: 1,
+        //     },
+
+        //     'TEMPLATE-TAG-MODULE': {
+        //       export: 'GLIMMER_TEMPLATE',
+        //       debugName: '<template>',
+        //       useTemplateTagProposalSemantics: 1,
+        //     },
+        //   },
+        // },
       ],
       [babel.availablePlugins['proposal-decorators'], { legacy: true }],
       [babel.availablePlugins['proposal-class-properties']],
