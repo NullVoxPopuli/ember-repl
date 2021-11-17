@@ -1,3 +1,13 @@
+## [1.8.5](https://github.com/NullVoxPopuli/ember-repl/compare/v1.8.4...v1.8.5) (2021-11-17)
+
+
+### Bug Fixes
+
+* **deps:** update cli dependencies ([eb6703c](https://github.com/NullVoxPopuli/ember-repl/commit/eb6703c641018a7427c2dfc9b0c7b9ab58f6af13))
+* allow to pass call through the included chain ([f47912c](https://github.com/NullVoxPopuli/ember-repl/commit/f47912c577fb326f55f0818b95f47387175570db))
+* rollback @semantic/* packages ([8723f39](https://github.com/NullVoxPopuli/ember-repl/commit/8723f390a88409b20eb040f362da1ef9b5d236c1))
+* rollback semantic release -- breaking change was not correctly guarded ([d419c8c](https://github.com/NullVoxPopuli/ember-repl/commit/d419c8c2219384ce84e45224fd8a72af740fc7cd))
+
 ## [1.8.4](https://github.com/NullVoxPopuli/ember-repl/compare/v1.8.3...v1.8.4) (2021-09-26)
 
 
