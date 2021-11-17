@@ -28,7 +28,11 @@ module.exports = {
     },
   },
 
-  included(app) {
+  included() {
+    this._super.included.apply(this, arguments);
+
+    const app = this._findHost(this);
+
     // Adds:
     //  - ember-template-compiler
     //  - @glimmer/syntax
