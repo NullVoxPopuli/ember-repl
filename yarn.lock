@@ -1342,7 +1342,7 @@
   dependencies:
     "@simple-dom/interface" "^1.4.0"
 
-"@glimmer/interfaces@0.80.0", "@glimmer/interfaces@^0.80.0":
+"@glimmer/interfaces@0.80.0":
   version "0.80.0"
   resolved "https://registry.npmjs.org/@glimmer/interfaces/-/interfaces-0.80.0.tgz#eabc7551ffe7ad27c44ba96d39e2af6ebf01c942"
   integrity sha512-evD9aVhYacFe/lD/FzaPs0CuuIgkr17+KbOCWDeEMXW0q2FnrLiQET40eP5nyhGLELhKE62mlIzdGmleUR6XYg==
@@ -1353,6 +1353,13 @@
   version "0.42.2"
   resolved "https://registry.npmjs.org/@glimmer/interfaces/-/interfaces-0.42.2.tgz#9cf8d6f8f5eee6bfcfa36919ca68ae716e1f78db"
   integrity sha512-7LOuQd02cxxNNHChzdHMAU8/qOeQvTro141CU5tXITP7z6aOv2D2gkFdau97lLQiVxezGrh8J7h8GCuF7TEqtg==
+
+"@glimmer/interfaces@^0.83.1":
+  version "0.83.1"
+  resolved "https://registry.yarnpkg.com/@glimmer/interfaces/-/interfaces-0.83.1.tgz#fb16f5f683ddc55f130887b6141f58c0751350fe"
+  integrity sha512-rjAztghzX97v8I4rk3+NguM3XGYcFjc/GbJ8qrEj19KF2lUDoDBW1sB7f0tov3BD5HlrGXei/vOh4+DHfjeB5w==
+  dependencies:
+    "@simple-dom/interface" "^1.4.0"
 
 "@glimmer/low-level@^0.42.2":
   version "0.42.2"
