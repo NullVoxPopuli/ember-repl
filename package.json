@@ -52,7 +52,7 @@
     "@embroider/test-setup": "^0.44.2",
     "@glimmer/interfaces": "^0.83.1",
     "@glimmer/reference": "^0.83.1",
-    "@glimmer/util": "^0.80.0",
+    "@glimmer/util": "^0.83.1",
     "@nullvoxpopuli/eslint-configs": "^1.4.8",
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.1",
