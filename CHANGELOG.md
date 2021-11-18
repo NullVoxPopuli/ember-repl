@@ -1,3 +1,10 @@
+## [1.8.6](https://github.com/NullVoxPopuli/ember-repl/compare/v1.8.5...v1.8.6) (2021-11-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency babel-plugin-htmlbars-inline-precompile to ^5.3.1 ([7f24fdc](https://github.com/NullVoxPopuli/ember-repl/commit/7f24fdc248ad9a9435655b9f3638e87aed339a0f))
+
 ## [1.8.5](https://github.com/NullVoxPopuli/ember-repl/compare/v1.8.4...v1.8.5) (2021-11-17)
 
 
