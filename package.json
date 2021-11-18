@@ -34,7 +34,7 @@
     "@glimmer/tracking": "^1.0.4",
     "babel-plugin-htmlbars-inline-precompile": "^5.3.1",
     "broccoli-file-creator": "^2.1.1",
-    "common-tags": "^1.8.0",
+    "common-tags": "^1.8.2",
     "ember-auto-import": "2.2.4",
     "ember-cli-babel": "^7.26.6",
     "ember-cli-htmlbars": "^5.7.1",
