@@ -1,3 +1,10 @@
+## [1.8.7](https://github.com/NullVoxPopuli/ember-repl/compare/v1.8.6...v1.8.7) (2021-11-18)
+
+
+### Bug Fixes
+
+* **deps:** update dependency common-tags to ^1.8.2 ([dbcc82a](https://github.com/NullVoxPopuli/ember-repl/commit/dbcc82ab496d5a64858293dccc9a781aefd3e0e3))
+
 ## [1.8.6](https://github.com/NullVoxPopuli/ember-repl/compare/v1.8.5...v1.8.6) (2021-11-18)
 
 
