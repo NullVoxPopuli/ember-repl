@@ -37,7 +37,7 @@
     "common-tags": "^1.8.2",
     "ember-auto-import": "2.2.4",
     "ember-cli-babel": "^7.26.6",
-    "ember-cli-htmlbars": "^5.7.1",
+    "ember-cli-htmlbars": "^6.0.0",
     "ember-cli-typescript": "^4.2.1",
     "ember-compatibility-helpers": "^1.2.5",
     "path-browserify": "^1.0.1",
