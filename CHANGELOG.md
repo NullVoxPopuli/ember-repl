@@ -1,3 +1,10 @@
+## [1.8.9](https://github.com/NullVoxPopuli/ember-repl/compare/v1.8.8...v1.8.9) (2021-11-19)
+
+
+### Bug Fixes
+
+* **deps:** update embroider monorepo to ^0.47.2 ([e86e1d3](https://github.com/NullVoxPopuli/ember-repl/commit/e86e1d31d4f54a6a2bb223f4ecfb8eadc3f0244e))
+
 ## [1.8.8](https://github.com/NullVoxPopuli/ember-repl/compare/v1.8.7...v1.8.8) (2021-11-19)
 
 
