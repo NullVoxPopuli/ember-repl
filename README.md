@@ -19,7 +19,7 @@ your app's initial time-to-interactive/etc stats.
 * Ember CLI v3.27 or above
 * Webpack v5 or above
 * ember-auto-import v2 or above
-* Node.js v12 or above
+* Node.js v14 or above
 
 
 ## Installation
