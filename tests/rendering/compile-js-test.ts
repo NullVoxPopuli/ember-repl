@@ -2,7 +2,7 @@ import { setComponentTemplate } from '@ember/component';
 import templateOnly from '@ember/component/template-only';
 import { click, render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
-import { module, test } from 'qunit';
+import { module, skip, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 
 // import this so we don't tree-shake it away
@@ -143,5 +143,164 @@ module('compileJS()', function (hooks) {
     );
 
     assert.dom().hasText('Custom extra module');
+  });
+
+  module('in AMD / requirejs environments (old-style)', function () {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    if ((window as any).require) {
+      skip('can optionally import from npm via skypack', async function (assert) {
+        assert.expect(4);
+
+        this.setProperties({
+          await: Await,
+          compile: async () => {
+            let template = `
+              import { Changeset as createChangeset } from 'validated-changeset';
+
+              let changeset = createChangeset({});
+
+              <template>
+                <a>{{changeset.isValid}}</a>
+                <b>{{changeset.isPristine}}</b>
+              </template>
+            `;
+
+            let { component, name, error } = await compileJS(template, {}, { skypack: true });
+
+            assert.ok(error);
+            assert.notOk(name);
+            assert.ok(/using native ESM is not allowed/.test(error?.toString() || ''));
+
+            return component;
+          },
+        });
+
+        await render(
+          hbs`
+            {{#let (this.compile) as |CustomComponent|}}
+              <this.await @promise={{CustomComponent}} />
+            {{/let}}
+          `
+        );
+
+        assert.dom('a').doesNotExist();
+      });
+
+      skip('can import from the skypack CDN', async function (assert) {
+        assert.expect(4);
+
+        this.setProperties({
+          await: Await,
+          compile: async () => {
+            let template = `
+              import { Changeset as createChangeset } from 'https://cdn.skypack.dev/validated-changeset';
+
+              let changeset = createChangeset({});
+
+              <template>
+                <a>{{changeset.isValid}}</a>
+                <b>{{changeset.isPristine}}</b>
+              </template>
+            `;
+
+            let { component, name, error } = await compileJS(template, {}, { skypack: true });
+
+            assert.ok(error);
+            assert.notOk(name);
+            assert.ok(/using native ESM is not allowed/.test(error?.toString() || ''));
+
+            return component;
+          },
+        });
+
+        await render(
+          hbs`
+            {{#let (this.compile) as |CustomComponent|}}
+              <this.await @promise={{CustomComponent}} />
+            {{/let}}
+          `
+        );
+
+        assert.dom('a').doesNotExist();
+      });
+    }
+  });
+
+  module('in ESM environments', function () {
+    skip('can optionally import from npm via skypack', async function (assert) {
+      assert.expect(4);
+
+      this.setProperties({
+        await: Await,
+        compile: async () => {
+          let template = `
+            import { Changeset as createChangeset } from 'validated-changeset';
+
+            let changeset = createChangeset({});
+
+            <template>
+              <a>{{changeset.isValid}}</a>
+              <b>{{changeset.isPristine}}</b>
+            </template>
+          `;
+
+          let { component, name, error } = await compileJS(template, {}, { skypack: true });
+
+          assert.notOk(error);
+          assert.ok(name);
+
+          return component;
+        },
+      });
+
+      await render(
+        hbs`
+            {{#let (this.compile) as |CustomComponent|}}
+              <this.await @promise={{CustomComponent}} />
+            {{/let}}
+          `
+      );
+
+      assert.dom('a').hasText('true');
+      assert.dom('b').hasText('true');
+    });
+
+    skip('can import from the skypack CDN', async function (assert) {
+      assert.expect(4);
+
+      this.setProperties({
+        await: Await,
+        compile: async () => {
+          let template = `
+            import { Changeset as createChangeset } from 'https://cdn.skypack.dev/validated-changeset';
+
+            let changeset = createChangeset({});
+
+            <template>
+              <a>{{changeset.isValid}}</a>
+              <b>{{changeset.isPristine}}</b>
+            </template>
+          `;
+
+          let { component, name, error } = await compileJS(template, {}, { skypack: true });
+
+          assert.notOk(error);
+          assert.ok(name);
+
+          return component;
+        },
+      });
+
+      await render(
+        hbs`
+          {{#let (this.compile) as |CustomComponent|}}
+            <this.await @promise={{CustomComponent}} />
+          {{/let}}
+        `
+      );
+
+      assert.dom('a').hasText('true');
+      assert.dom('b').hasText('true');
+    });
   });
 });
