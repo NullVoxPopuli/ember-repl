@@ -1,3 +1,16 @@
+# [2.0.0](https://github.com/NullVoxPopuli/ember-repl/compare/v1.8.10...v2.0.0) (2021-12-04)
+
+
+### chore
+
+* **internal:** ci updates, drop node 12 ([77637a9](https://github.com/NullVoxPopuli/ember-repl/commit/77637a94c5d30809ceeb4895a21434dfb3bd4d3a))
+
+
+### BREAKING CHANGES
+
+* **internal:** drop support for node 12
+Add support for Node 16, Ember 3.28
+
 ## [1.8.10](https://github.com/NullVoxPopuli/ember-repl/compare/v1.8.9...v1.8.10) (2021-11-19)
 
 
