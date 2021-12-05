@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/NullVoxPopuli/ember-repl/compare/v2.0.0...v2.0.1) (2021-12-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-cli-htmlbars to ^6.0.1 ([735c905](https://github.com/NullVoxPopuli/ember-repl/commit/735c905a2f99be48865f6cd7ba7ea3abe9cd860d))
+
 # [2.0.0](https://github.com/NullVoxPopuli/ember-repl/compare/v1.8.10...v2.0.0) (2021-12-04)
 
 
