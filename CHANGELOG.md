@@ -1,3 +1,10 @@
+## [2.0.9](https://github.com/NullVoxPopuli/ember-repl/compare/v2.0.8...v2.0.9) (2021-12-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-cli-babel to ^7.26.11 ([fb572e5](https://github.com/NullVoxPopuli/ember-repl/commit/fb572e5bd40221286f69182831cab706343362d4))
+
 ## [2.0.8](https://github.com/NullVoxPopuli/ember-repl/compare/v2.0.7...v2.0.8) (2021-12-21)
 
 
