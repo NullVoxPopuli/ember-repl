@@ -1,3 +1,10 @@
+## [2.0.15](https://github.com/NullVoxPopuli/ember-repl/compare/v2.0.14...v2.0.15) (2022-01-14)
+
+
+### Bug Fixes
+
+* **deps:** update embroider monorepo to ^0.50.2 ([e64a649](https://github.com/NullVoxPopuli/ember-repl/commit/e64a64977aef6d075890823dd0b6eb5c26252dfb))
+
 ## [2.0.14](https://github.com/NullVoxPopuli/ember-repl/compare/v2.0.13...v2.0.14) (2022-01-13)
 
 
