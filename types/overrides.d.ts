@@ -1,4 +1,5 @@
 import '@ember/component';
+import type {TemplateFactory} from 'ember-cli-htmlbars';
 
 /**
   * Typed Ember is refraining from adding this because it's not *really* intended for
