@@ -1,3 +1,10 @@
+## [2.0.25](https://github.com/NullVoxPopuli/ember-repl/compare/v2.0.24...v2.0.25) (2022-02-13)
+
+
+### Bug Fixes
+
+* **types:** update type-dependencies ([91b3d9b](https://github.com/NullVoxPopuli/ember-repl/commit/91b3d9be92ab436aa8fb3227339f72594d3492d0))
+
 ## [2.0.24](https://github.com/NullVoxPopuli/ember-repl/compare/v2.0.23...v2.0.24) (2022-02-04)
 
 
