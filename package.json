@@ -52,7 +52,7 @@
     "@ember/test-helpers": "^2.6.0",
     "@ember/test-waiters": "^3.0.1",
     "@embroider/test-setup": "^1.2.0",
-    "@glimmer/interfaces": "^0.83.1",
+    "@glimmer/interfaces": "^0.84.0",
     "@glimmer/reference": "^0.83.1",
     "@glimmer/util": "^0.83.1",
     "@nullvoxpopuli/eslint-configs": "^2.1.23",
