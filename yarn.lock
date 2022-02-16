@@ -1340,7 +1340,7 @@
     "@glimmer/env" "^0.1.7"
     "@glimmer/validator" "^0.44.0"
 
-"@glimmer/util@0.83.1", "@glimmer/util@^0.83.1":
+"@glimmer/util@0.83.1":
   version "0.83.1"
   resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.83.1.tgz#cc7511b03164d658cf6e3262fce5a0fcb82edceb"
   integrity sha512-amvjtl9dvrkxsoitXAly9W5NUaLIE3A2J2tWhBWIL1Z6DOFotfX7ytIosOIcPhJLZCtiXPHzMutQRv0G/MSMsA==
@@ -1349,7 +1349,7 @@
     "@glimmer/interfaces" "0.83.1"
     "@simple-dom/interface" "^1.4.0"
 
-"@glimmer/util@0.84.0":
+"@glimmer/util@0.84.0", "@glimmer/util@^0.84.0":
   version "0.84.0"
   resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.84.0.tgz#a9d3a9471678e5c80470646a70ea54c2cf1f8e2c"
   integrity sha512-H5OjZXaroV821TLVHXox4t2GICwUA8HdijyAf+wouSfINmm+y4GbbEwoZM9ns8YSZGX7/gG0Z4Znwti0oFbHPw==
