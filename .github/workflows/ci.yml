@@ -24,7 +24,7 @@ jobs:
           - "14"
           - "16"
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: volta-cli/action@v1
         with:
           node-version: ${{ matrix.node }}
@@ -46,7 +46,7 @@ jobs:
           - "16"
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: volta-cli/action@v1
         with:
           node-version: ${{ matrix.node }}
@@ -75,7 +75,7 @@ jobs:
           - embroider-safe
           - embroider-optimized
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: volta-cli/action@v1
         with:
           node-version: 14.x
@@ -90,7 +90,7 @@ jobs:
     needs: [tests, try-scenarios, floating-dependencies]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: ${{ github.head_ref }}
           token: ${{ secrets.GitHubToken }}
@@ -107,7 +107,7 @@ jobs:
     needs: [tests, try-scenarios, floating-dependencies]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           persist-credentials: false
       - uses: volta-cli/action@v1
