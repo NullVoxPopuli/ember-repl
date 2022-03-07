@@ -1,3 +1,10 @@
+## [2.0.31](https://github.com/NullVoxPopuli/ember-repl/compare/v2.0.30...v2.0.31) (2022-03-07)
+
+
+### Bug Fixes
+
+* **deps:** update embroider monorepo to ^1.4.0 ([7175e9e](https://github.com/NullVoxPopuli/ember-repl/commit/7175e9e4bb1b51d2cb1d994c704e7696321553f6))
+
 ## [2.0.30](https://github.com/NullVoxPopuli/ember-repl/compare/v2.0.29...v2.0.30) (2022-03-04)
 
 
