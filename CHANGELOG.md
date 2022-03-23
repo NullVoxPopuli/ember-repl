@@ -1,3 +1,10 @@
+## [2.0.35](https://github.com/NullVoxPopuli/ember-repl/compare/v2.0.34...v2.0.35) (2022-03-23)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-auto-import to v2.4.1 ([7ee520f](https://github.com/NullVoxPopuli/ember-repl/commit/7ee520f31b0fdf4aa169e810a87d08d9d8d1f18a))
+
 ## [2.0.34](https://github.com/NullVoxPopuli/ember-repl/compare/v2.0.33...v2.0.34) (2022-03-19)
 
 
