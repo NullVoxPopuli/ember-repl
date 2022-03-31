@@ -30,8 +30,8 @@
   "dependencies": {
     "@babel/standalone": "^7.17.8",
     "@embroider/macros": "^1.5.0",
-    "@glimmer/component": "^1.0.4",
-    "@glimmer/tracking": "^1.0.4",
+    "@glimmer/component": "^1.1.0",
+    "@glimmer/tracking": "^1.1.0",
     "babel-plugin-htmlbars-inline-precompile": "^5.3.1",
     "broccoli-file-creator": "^2.1.1",
     "broccoli-funnel": "^3.0.8",
