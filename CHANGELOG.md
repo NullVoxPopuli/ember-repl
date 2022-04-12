@@ -1,3 +1,10 @@
+## [2.0.40](https://github.com/NullVoxPopuli/ember-repl/compare/v2.0.39...v2.0.40) (2022-04-12)
+
+
+### Bug Fixes
+
+* **deps:** update framework dependencies to ^1.1.2 ([9e7b65c](https://github.com/NullVoxPopuli/ember-repl/commit/9e7b65c357347bbaa6bdd9cfd0b846c23d6a4d73))
+
 ## [2.0.39](https://github.com/NullVoxPopuli/ember-repl/compare/v2.0.38...v2.0.39) (2022-04-08)
 
 
