@@ -1,3 +1,10 @@
+## [2.0.41](https://github.com/NullVoxPopuli/ember-repl/compare/v2.0.40...v2.0.41) (2022-04-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ember-cli-typescript to ^5.1.0 ([a0bff08](https://github.com/NullVoxPopuli/ember-repl/commit/a0bff0823d2afd898774841b8e79db3f46bb77ef))
+
 ## [2.0.40](https://github.com/NullVoxPopuli/ember-repl/compare/v2.0.39...v2.0.40) (2022-04-12)
 
 
