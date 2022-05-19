@@ -28,7 +28,7 @@
     "postpack": "ember ts:clean"
   },
   "dependencies": {
-    "@babel/standalone": "^7.17.12",
+    "@babel/standalone": "^7.18.1",
     "@embroider/macros": "^1.6.0",
     "@glimmer/component": "^1.1.2",
     "@glimmer/tracking": "^1.1.2",
