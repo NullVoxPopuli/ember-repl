@@ -1,3 +1,10 @@
+## [2.0.50](https://github.com/NullVoxPopuli/ember-repl/compare/v2.0.49...v2.0.50) (2022-05-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @babel/standalone to ^7.18.3 ([84d6123](https://github.com/NullVoxPopuli/ember-repl/commit/84d61230cd9f82f095ec03283121035e301cd6d4))
+
 ## [2.0.49](https://github.com/NullVoxPopuli/ember-repl/compare/v2.0.48...v2.0.49) (2022-05-25)
 
 
