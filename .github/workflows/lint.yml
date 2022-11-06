@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: volta-cli/action@v2
+      - uses: volta-cli/action@v4
 
       - run: yarn install --frozen-lockfile
 
@@ -39,7 +39,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: volta-cli/action@v2
+      - uses: volta-cli/action@v4
 
       - run: yarn install --frozen-lockfile
 
@@ -84,5 +84,5 @@ jobs:
       with:
         fetch-depth: 0
 
-    - uses: volta-cli/action@v2
+    - uses: volta-cli/action@v4
     - uses: wagoid/commitlint-github-action@v5.0.2
