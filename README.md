@@ -1,5 +1,13 @@
 # ember-repl
 
+
+ember-repl has moved to a [new home](https://github.com/NullVoxPopuli/limber/pull/754)
+
+This is to help more quickly iterate on implementation as the limber/glimdown is a primary consumer.
+
+--------------------------
+
+
 [![npm version](https://badge.fury.io/js/ember-repl.svg)](https://badge.fury.io/js/ember-repl)
 [![CI](https://github.com/NullVoxPopuli/ember-repl/actions/workflows/ci.yml/badge.svg?branch=main&event=push)](https://github.com/NullVoxPopuli/ember-repl/actions/workflows/ci.yml)
 
